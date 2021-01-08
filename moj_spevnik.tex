@@ -2,7 +2,7 @@
 % Juraj Holub
 % jurajholub1@gmail.com
 
-\documentclass[10pt]{article}
+\documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[czech]{babel}
 \usepackage[left=1.0cm,top=1.5cm,text={18cm,25cm}]{geometry}
@@ -12,10 +12,42 @@
 \usepackage[IL2]{fontenc}
 \usepackage{multicol}
 \usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[document]{ragged2e}
 %\date{}
 
 
 \begin{document}
+	
+\newenvironment{song}[2]
+{
+\begin{minipage}{\textwidth}
+\subsection{#1}
+\begin{multicols}{#2}
+\begin{guitar}\begin{Center}
+}
+{
+\end{Center}\end{guitar}
+\end{multicols}\end{minipage}
+}
+	
+\newenvironment{songgroup}[1]
+{
+\begin{minipage}{\textwidth}
+\begin{multicols}{#1}
+}
+{
+\end{multicols}\end{minipage}
+}
+	
+\newenvironment{groupitem}[1]
+{
+\subsection{#1}
+\begin{guitar}\begin{center}
+}
+{
+\end{center}\end{guitar}
+}
 	
 \begin{titlepage}
 	\begin{center}
@@ -35,16 +67,18 @@
 \end{multicols}
 
 \newpage
+%\guitarOn
+%\begin{guitar}
+%\begin{minipage}
 
-\begin{Large}\renewcommand\guitarPreAccord{\normalsize\strut}
+%\begin{Large}\renewcommand\guitarPreAccord{\normalsize\strut}
 
 %%%%%%%%%%%%%% STALE OMSOVE SPEVY
 \section{Stále omšové spevy}
 
-\begin{multicols}{2}
-\begin{minipage}{\textwidth}
-\subsection{Otče náš (veríme ti)}
-\begin{guitar}
+\begin{songgroup}{2}
+
+\begin{groupitem}{Otče náš (veríme ti)}
 	\textit{CAPO 2}\\
 	/:[F]Otče náš veríme ti.
 	[Dmi]Otče nás ponúkame ti.
@@ -56,87 +90,49 @@
 	/:[F]Otče nás veríme ti .
 	[Dmi]Otče náš ponúkame ti.
 	[B]Otče náš naše srdcia pre [C] bratov.:/
-\end{guitar}
-\end{minipage}
+\end{groupitem}
 
-\begin{minipage}{\textwidth}
-\subsection{Agnus Dei (Baránok Boží )}
-\begin{guitar}
-	/:[Emi]Agnus De[C]i, qui tollis peccata [D]mundi, 
-	miserere [Emi]nobis:/
-	\\
-	[G]Agnus [Ami]Dei, qui tollis peccata [G]mundi, 
-	dona nobis [D]pacem, dona nobis [C]pacem,
-	dona nobis [Emi]pacem.
-\end{guitar}
-\end{minipage}
-\end{multicols}
+\begin{groupitem}{Agnus Dei (Baránok Boží)}
+/:[Emi]Agnus De[C]i, qui tollis peccata [D]mundi, 
+miserere [Emi]nobis:/
+\\
+[G]Agnus [Ami]Dei, qui tollis peccata [G]mundi, 
+dona nobis [D]pacem, dona nobis [C]pacem,
+dona nobis [Emi]pacem.
+\end{groupitem}
 
-\begin{multicols}{2}
-\begin{minipage}{\textwidth}
-\subsection{Nesieme, Pane, chlieb a víno}
-\begin{guitar}
-	N[Dmi]esieme, Pane, chlieb a [C]víno.
-	N[Ami]esieme celý život [Dmi]náš.
-	N[Dmi]esieme, Pane, chlieb a [C]víno
-	a[Ami] hľadáme Tvoju [Dmi]tvár, Tvoju [C]tvár,
-	T[Ami]voju svätú [Dmi]tvár.
-\end{guitar}
-\end{minipage}
+\columnbreak
 
-\begin{minipage}{\textwidth}
-\subsection{Svätý, svätý, svätý}
-\begin{guitar}
-	[A]Svätý, svätý, [D]svätý, svätý [A]Pán Boh [Hmi]všetkých [E]sve[A]tov.
-	Plné sú [D]nebesia i zem [A]Tvojej [Hmi]slá[E]vy[A].
-	Ho[F]san[G]na, ho[A]sanna, ho[G]sanna na [D]výsos[E]tiach!
-	[A]Požehnaný, [D]ktorý prichádza [A]v mene [Hmi]Pá[E]no[A]vom.
-	Ho[F]san[G]na, ho[A]sanna, ho[F]sanna na [G]výsos[A]tiach!
-\end{guitar}
-\end{minipage}
-\end{multicols}
+\begin{groupitem}{Nesieme, Pane, chlieb a víno}
+N[Dmi]esieme, Pane, chlieb a [C]víno.
+N[Ami]esieme celý život [Dmi]náš.
+N[Dmi]esieme, Pane, chlieb a [C]víno
+a[Ami] hľadáme Tvoju [Dmi]tvár, Tvoju [C]tvár,
+T[Ami]voju svätú [Dmi]tvár.
+\end{groupitem}
+
+\begin{groupitem}{Svätý, svätý, svätý}
+[A]Svätý, svätý, [D]svätý, svätý [A]Pán Boh [Hmi]všetkých [E]sve[A]tov.
+Plné sú [D]nebesia i zem [A]Tvojej [Hmi]slá[E]vy[A].
+Ho[F]san[G]na, ho[A]sanna, ho[G]sanna na [D]výsos[E]tiach!
+[A]Požehnaný, [D]ktorý prichádza [A]v mene [Hmi]Pá[E]no[A]vom.
+Ho[F]san[G]na, ho[A]sanna, ho[F]sanna na [G]výsos[A]tiach!
+\end{groupitem}
+\end{songgroup}
+
+\begin{song}{Chvála ti, Kriste (Aleluja)}{2}
+[Emi]Chvála ti, [G]Kriste, [D]Kráľ večnej [Emi]slávy.
+[C]Chvála ti, [G]Kriste. [H]Kráľ večnej [Emi]slávy.
+\columnbreak
+\end{song}
 
 \newpage
 %%%%%%%%%%%%%% CHVALY
 
-\begin{minipage}{\textwidth}
 \section{Chvály}
-\subsection{Bližšie}
-\textit{CAPO 3}
-\begin{multicols*}{2}
-\begin{guitar}	
-	Tvo[Em]ja láska vzala mi [Dsus]dych
-	a zmenila [G]môj svet,
-	zmenila [C]môj svet.
-	\\
-	L[Em]en na tom zál[Dsus]eží
-	byť s Tebou [G]navždy,
-	byť s Tebou [C]navždy.
-	\\
-	R: [G]Stále bližšie k Tebe [D]kráčať,
-	v Tvojej hĺbke sa roz[Em]plývať,
-	ja túžim poznať [C]viac,
-	Teba poznať [G]viac.
-	\columnbreak
-	Tvoja láska zmysel [D]dáva
-	a všetko preko[Em]náva,
-	ja túžim poznať [C]viac,
-	Teba poznať [Am]viac[G D].
-	Teba poznať [Am]viac[G D].
-	\\
-	Prechod:
-	[C]Woah, [G]woah,
-	[Dsus]Tvoja láska [Em]vznešená je.
-	Woah, woah,
-	Tvoja láska láme.
-\end{guitar}
-\end{multicols*}
-\end{minipage}
 
-\begin{minipage}{\textwidth}
-\subsection{Boh je tak blízko nás}
-\begin{multicols}{2}
-\begin{guitar}
+\begin{songgroup}{2}
+\begin{groupitem}{Boh je tak blízko nás}
 	PREDOHRA: 
 	Dm, C, Am7, B, 
 	Dm, C, Am7, Dm
@@ -154,14 +150,10 @@
 	DOHRA: 
 	F, C, Gm, Dm, Bb, 
 	C, Am7, G, Dm
-\end{guitar}
-\end{multicols}
-\end{minipage}
+\end{groupitem}
 
-\begin{minipage}{\textwidth}
-\begin{multicols}{2}
-\subsection{Vyvyšujem Teba Pane}
-\begin{guitar}	
+\columnbreak
+\begin{groupitem}{Vyvyšujem Teba Pane}
 	[C]Vyvyšujem Teba [G]Pane 
 	nad týmto [F]dňom,
 	[C]vyvyšujem Teba [G]Pane 
@@ -169,32 +161,46 @@
 	[C]vyvyšujem Teba [G]Pane 
 	nad všetkým,[F] čo stvorené je,
 	[C]vyvyšujem Teba [G]Pane
- nad svojím[F] životom.
+	nad svojím[F] životom.
 	\\
 	[C]Vyvyšujem Tvoje [G]meno 
-	nad každé [F]meno (4x) 
-\end{guitar}
+	nad každé [F]meno (4x)
+\end{groupitem}
 
-\subsection{Tebe patrí chvála}
-\begin{guitar}	
+\end{songgroup}
+
+\begin{song}{Bližšie}{2}
+	\textit{\color{gray}Intro: A B C\# H}
+	Tvo[C#]ja láska vzala mi [H]dych a zmenila [E]môj svet,
+	zmenila [A]môj svet.L[C#]en na tom zál[H]eží
+	byť s Tebou [E]navždy, byť s Tebou [A]navždy.
+	\\
+	R.: [E]Stále bližšie k Tebe [H]kráčať, v Tvojej hĺbke sa roz[C#]plývať,
+	ja túžim poznať [A]viac, Teba poznať [E]viac.
+	\columnbreak
+	Tvoja láska zmysel [H]dáva a všetko preko[C#]náva,
+	ja túžim poznať [A]viac, Teba poznať viac[E].
+	\\
+	\textit{\color{gray}Interlude: F\#m E A}
+	\textit{\color{gray}Bridge:}
+	[A]Woah, [E]woah, [H]Tvoja láska [C#]vznešená je.
+	Woah, woah, Tvoja láska láme.
+\end{song}
+
+\begin{song}{Tebe patrí chvála}{2}
 	\textit{CAPO 2}\\
 	/:[D]Tebe patrí [G] chvála, 
 	česť a [Hmi] sláva,
 	pozdvi [Ami] hnime svoje [C] ruky 
 	a [D] chváľme Sväté meno.:/
-	\\
+	\columnbreak
 	Lebo Ty si [G] Pán, 
 	veľké veci robíš [Emi] nám, 
 	nikto nie je ako [C] Ty, 
-	[Ami] nikto [D] nie je ako Ty.	 
-\end{guitar}
-\end{multicols}
-\end{minipage}
+	[Ami] nikto [D] nie je ako Ty.
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Kríž je znakom spásy}
-\begin{multicols}{2}
-\begin{guitar}
+\begin{song}{Kríž je znakom spásy}{2}
 	R: [C]Kríž je znakom [Emi]spásy, 
 	[F]kríž ten dreve[G]ný,
 	[C]Kristom nesený [Emi]z lásky, 
@@ -214,15 +220,10 @@
 	ť[F]archu svojich [G]vín.
 	[C]Krista vždy nasle[Emi]dovať, 
 	[F]chcem ísť stále [G]s Níí[C]-ím.
-\end{guitar}
-\end{multicols}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Aj keby nekvitol fík}
-\textit{CAPO 2}
-\begin{multicols*}{2}
-\begin{guitar}	
+\begin{song}{Aj keby nekvitol fík}{2}
+	\textit{CAPO 2}
 	1.Aj keby nekvitol [Em] fík,
 	aj keby [C]nerodila zem,
 	aj keby [Am]nebesá nedoniesli [G]svetlo v nové [H7]ráno.
@@ -246,13 +247,9 @@
 	a [D]budem spievať chvály.
 	[C]Lebo ve[Am]rím, v [C]Neho ve[Am]rím.
 	( Aj keby nekvitol [Em]fík )
-\end{guitar}
-\end{multicols*}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Ty si Pánom}
-\begin{guitar}
+\begin{song}{Ty si Pánom}{2}
 	[G]Ty si Pánom (Ty si Pánom), 
 	[D]Ty si Kráľom (Ty si Kráľom),
 	[Emi] Ó Kráľom je [C]Boo-[D]oh.
@@ -261,13 +258,24 @@
 	[D]pozdvihnime svoje dlane, aleluja
 	[Emi]postavme sa pred tvár Pána 
 	a velebme [C]Hoo-[D]oo. :/
-\end{guitar}
-\end{minipage}
-
-\begin{minipage}{\textwidth}
-\subsection{Až do konca dní}
-\begin{multicols*}{2}
-\begin{guitar}	
+\end{song}
+	
+\begin{song}{Živý je Pán}{2}
+	R. /: Ž[Emi]ivý je [A]Pán, ž[D]ivý je [Hmi]Pán, 
+	ž[Emi]ivý je [A]Pán na veky [D]vekov. :/
+	\\
+	1. L[Emi]ebo Pán tak [A]miloval svet, ž[D]e Syn[Hmi]a svojho,
+	[Emi]jednorode[A]ného za nás [D]dal.
+	[Emi]Aby každý, [A]kto uverí v [D]Neho, nezahy[Hmi]nul, 
+	[Emi]ale mal s Ním ž[A]ivot večný [D]v nebi.
+	\columnbreak
+	2. [Emi]Ak sa niekto [A]nenarodí [D]z vody a [Hmi]z Ducha,
+	[Emi]nemôže vojsť [A]do kráľovstva [D]jeho.
+	[Emi]Iste nikto [A]s ním nevojde [D]do Božej slá[Hmi]vy, 
+	[Emi]ak sa z Boha [A]znova nena[D]rodí.
+\end{song}
+	
+\begin{song}{Až do konca dní}{2}
 	1.[C]Dnes dávaš [D]všetko čo [Emi]máš.
 	[C]Našiel si [D]lásku a [G]tak ju stráž.
 	[C]Boh klope [D]na dvere, kým svet [Emi]spí,
@@ -279,11 +287,6 @@
 	[C]Cítiš, že [D]Boh je tak [Emi]blízko nás,
 	Cítiš, že s [Ami]Ním 
 	si tak [C]stále viac [D]svoj.
-	\\
-	3.[C]Vždy príde [D]otázok [Emi]pár,
-	[C] čo trápia [D]srdce a [G]trápia tvár.
-	[C]Vieš, že ťa [D]nezlomia, [Emi]kým si s Ním, 
-	Neboj sa [Ami] ísť, On [C]vie čo s [D]tým.
 	\columnbreak
 	Boh ti [C]práve dal,
 	to [Hmi]znamenie tých nových [Ami]dní,
@@ -293,15 +296,15 @@
 	Dnes ti vrátil [C]raj, tak ho [D]vnútri [G]maj.
 	Až do konca [C]dní, ma k [D] človeku [Emi]blízko.
 	S Ním nikdy nie si [Ami]sám, [C]až do konca [D]dní.
-\end{guitar}
-\end{multicols*}
-\end{minipage}
-
-\begin{minipage}{\textwidth}
-\subsection{Aj keď Ťa nevidím}
-\textit{CAPO 1}
-\begin{multicols*}{2}
-\begin{guitar}	
+	\\
+	3.[C]Vždy príde [D]otázok [Emi]pár,
+	[C] čo trápia [D]srdce a [G]trápia tvár.
+	[C]Vieš, že ťa [D]nezlomia, [Emi]kým si s Ním, 
+	Neboj sa [Ami] ísť, On [C]vie čo s [D]tým.
+\end{song}
+	
+\begin{song}{Aj keď Ťa nevidím}{2}
+	\textit{CAPO 1}
 	1. Aj keď Ťa [C]nevidím, viem, že si tu.
 	Aj keď Ťa [Ami]necítim, mám istotu.
 	V smelej [F]dôve[C]re kráčam [Ami]vo vie[F]re každý [C]deň.
@@ -318,34 +321,9 @@
 	[C]Aj keď ma [C]obkľúči a zovrie strach,
 	Ježiš vždy [Ami]víťazí, mňa má v rukách.
 	V smelej [F]dôve[C]re kráčam [Ami]vo vie[F]re každý [C]deň.
-\end{guitar}
-\end{multicols*}
-\end{minipage}
-
-\begin{minipage}{\textwidth}
-\subsection{Živý je Pán}
-\begin{multicols*}{2}
-\begin{guitar}	
-	R. /: Ž[Emi]ivý je [A]Pán, ž[D]ivý je [Hmi]Pán, 
-	ž[Emi]ivý je [A]Pán na veky [D]vekov. :/
-	\\
-	1. L[Emi]ebo Pán tak [A]miloval svet, ž[D]e Syn[Hmi]a svojho,
-	[Emi]jednorode[A]ného za nás [D]dal.
-	[Emi]Aby každý, [A]kto uverí v [D]Neho, nezahy[Hmi]nul, 
-	[Emi]ale mal s Ním ž[A]ivot večný [D]v nebi.
-	\columnbreak
-	2. [Emi]Ak sa niekto [A]nenarodí [D]z vody a [Hmi]z Ducha,
-	[Emi]nemôže vojsť [A]do kráľovstva [D]jeho.
-	[Emi]Iste nikto [A]s ním nevojde [D]do Božej slá[Hmi]vy, 
-	[Emi]ak sa z Boha [A]znova nena[D]rodí.
-\end{guitar}
-\end{multicols*}
-\end{minipage}
-
-\begin{minipage}{\textwidth}
-\subsection{Ty si jediný Boh}
-\begin{multicols*}{2}
-\begin{guitar}	
+\end{song}
+	
+\begin{song}{Ty si jediný Boh}{2}
 	Ty si [E]jediný Boh
 	[A2]prvý a posledný.
 	Nikdy [A]nebol a nebude viacej,
@@ -366,14 +344,9 @@
 	[A2]múdry a dokonalý.
 	Nikdy [A]nebol a nebude viacej,
 	nikto [E]ako si Ty.
-\end{guitar}
-\end{multicols*}
-\end{minipage}
-
-\begin{minipage}{\textwidth}
-\subsection{Privítajme Pána v tomto chráme}
-\begin{multicols*}{2}
-\begin{guitar}	
+\end{song}
+	
+\begin{song}{Privítajme Pána v tomto chráme}{2}
 	[G]Všade tam, kde sú ľ[D]udia zíde[G]ní
 	v mene Ježiš, v [D]láske zjednote[G]ní.
 	[Ami]Práve tam Boh [Emi]zasľúbil, ž[C]e bude prítom[G]ný
@@ -384,18 +357,105 @@
 	[D]nech ho Božia sláva [G]naplní
 	[C]Svojmu Bohu spieva[G]me a hráme
 	[D]pieseň spase[G]ných.:/
-\end{guitar}
-\end{multicols*}
-\end{minipage}
+\end{song}
+
+	
+\begin{song}{Srdce dokorán}{2}
+	\textit{\color{gray}8x}
+	Otvá[D]ram srdce dok[A]orán
+	nech prúdi Tvoj [F#mi]Duch
+	nech prúdi Tvoj [E]Duch
+	\\
+	\textit{\color{gray}3x}
+	[D] Tam, kde vstúpiš Ty, [A] tma sa vytratí
+	[F#mi] a strach už nemá moc, [E] ovládať každý krok
+	[D] Tam, kde vládneš Ty, [A] láska víťazí [F#mi]a dáva silu í[E]sť
+	\\
+	\textit{\color{gray}4x}
+	[D]So srdcom otvore[A]ným
+	znovu [F#mi]bežíme za Teb[E]ou
+	\columnbreak
+	\textit{\color{gray}8x}
+	Otvá[C]ram srdce dok[G]orán
+	nech prúdi Tvoj [Emi]Duch
+	nech prúdi Tvoj [D]Duch
+	\\
+	\textit{\color{gray}3x}
+	[C] Tam, kde vstúpiš Ty, [G] tma sa vytratí
+	[Emi] a strach už nemá moc, [D] ovládať každý krok
+	[C] Tam, kde vládneš Ty, [G] láska víťazí [Emi]a dáva silu í[D]sť
+	\\
+	\textit{\color{gray}4x}
+	[C]So srdcom otvore[G]ným
+	znovu [Emi]bežíme za Teb[D]ou
+\end{song}
+
+\begin{song}{Voláme}{2}
+	Voláme, [Emi]Otec, ako nikdy [A]predtým
+	[C]horíme, chceme [D]viac
+	Otváraš [Emi]nebo a dávaš nám [C]dážď
+	zjavuješ [G]seba uprostred [D]nás
+	\columnbreak
+	[Emim]Anjeli spievajú
+	[C]a mŕtvi z hrobov vstávajú
+	[D]a démoni pred tvojou tvárou padajú
+\end{song}
+
+
+\begin{song}{Miťo Bodnár - Čo to dá}{2}
+	[Hmi]Tak jak [G]odpúšťam[D]e
+	[Hmi]my svojim [G]vinní[D]kom
+	[Hmi]tak odpusť [G]nám ty, Pan[D]e
+	[Hmi]a nene[G]chaj nás v [D]zlom
+	
+	[Hmi]Tvoja [G]vôľa nech j[D]e
+	[Hmi]v nebi [G]aj na zem[D]i
+	[Hmi]tí, čo chlieb [G]denne prosi[D]a
+	[Hmi]tak, Pane, [G]to sme my
+	[D]tu dolu na zemi [Hmi G D].
+	\columnbreak
+	\textit{\color{gray}Chorus 1:}
+	Budem [Hmi]chváliť svojho [G]Pána
+	on mi [D]silu na to [A]dá
+	budem [Hmi]spievať svojmu [G]Bohu
+	[D]spievať, čo to [A]dá
+	čo to [Hmi]dá [G D A].
+	
+	\textit{\color{gray}Chorus 1:}
+	Chcem [Hmi]teba vzývať, [G]Bože
+	[D]každý jeden [A]deň
+	ty [Hmi]víťaz si nad [G]hriechom
+	tak [D]preto spievať [A]chcem
+	spievať [Hmi]smiem [G D A].
+\end{song}
+
+
+\begin{song}{Tvoja tvár}{2}
+	\textit{\color{gray}CAPO 1}
+	Si [C]ten ktorý sa zriekol svojich [F]ciest,
+	a [G]nevinný šiel za mňa kríž vini[F]esť.
+	Len v [C]Teba svoju dôveru skla[F]dám,
+	toho [G]ktorý aj jednu sám hľa[F]dá.
+	[C]Ovečku stratenú z nerovných [F]ciest,
+	na [G]ktoré ho ty sám musíš u[F]niesť.
+	\columnbreak
+	[C]Túžim viac ja, [G]túžim nájsť tvoju t[F]vár.
+	[C]Spievam Ti a [G]vyznávam si môj [F]Pán.
+	\\
+	Si [C]ten kto zlákal ma celý život [F]dať,
+	po[G]noriť sa do lásky bez výh[F]rad.
+	A [C]hoci sám často výhľad ne[F]mám,
+	ve[G]rím že si dôverihodný [F]Pán.
+	Ja [C]viem že v nebi raz zbadám Te[F]ba,
+	tak [G]na zemi Ti z láskou dám se[F]ba.
+\end{song}
 
 \newpage
 %%%%%%%%%%%%%% ČEK REPABLIK
 
-\begin{minipage}{\textwidth}
 \section{České chvály}
-\subsection{Svorni jsme}
-\begin{multicols}{2}
-\begin{guitar}
+	
+\begin{song}{Svorni jsme}{2}
 	1. Svorni [Emi]jsme v jednom Duchu, 
 	vede nás jeden Pán,
 	svorni [Ami]jsme v jednom Duchu, 
@@ -420,32 +480,27 @@
 	R.: Pozna[C]jí nás po lásce, 
 	křesťa[Emi]ny, křesťa[Ami]ny,
 	Ano, [Emi]po lásce po[C]znají křesťa[Emi]ny.
-\end{guitar}
-\end{multicols}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\begin{multicols}{2}
-\subsection{Duchu Svatý, přijď (sestup mezi nás)}
-\begin{guitar}	
-	D[Emi]uchu Svatý příď[A], sestup [EMi]mezi nás[A],
+\begin{songgroup}{2}
+\begin{groupitem}{Duchu Svatý, přijď}
+	D[Emi]uchu Svatý příď[A], sestup [Emi]mezi nás[A],
 	mz Tě [C]voláme[D], probuď nás[Emi].
 	\\
 	R. Vše co [C]mám, s radostí[D], odevz[Emi]dá[Hmi]vam,
-	Vše co [C]jsem, budiž [D]Tvé, jsi můj [Emi]Pán.
-\end{guitar}
-
-\subsection{Hle, stojím u dveří}
-\begin{guitar}	
+	Vše co [C]jsem, budiž [D]Tvé, jsi můj [Emi]Pán.	
+\end{groupitem}
+\columnbreak
+	
+\begin{groupitem}{Hle, stojím u dveří}
 	Hle [Dmi]stojím u dveří a tluču, [C]pusť mě [Dmi]dál [C].
 	[Gmi]Stojím u dveří a toužím s Tebou být.
 	[Dmi]Stojím u dveří a tluču, [C]praví [Dmi]Pán[C].
-\end{guitar}
+\end{groupitem}
 
-\columnbreak
-
-\subsection{Bůh je síla má}
-\begin{guitar}
+\end{songgroup}
+	
+\begin{song}{Bůh je síla má}{1}
 	[Emi]Bůh je síla má [C]i vojska [D]mého,
 	[Emi]On působí [C]volnou cestou [D]mou,
 	[Emi]neboť dal mi šťít [C]spasení své[D]ho
@@ -453,19 +508,14 @@
 	\\
 	R: /:[G]Neboť kdo je Bohem [C]kromě Hospo[D]dina
 	[Emi]A kdo je skálou kromě [C]Boha naše[D]ho.:/
-\end{guitar}
-\end{multicols}
-\end{minipage}
+\end{song}
 
 \newpage
 %%%%%%%%%%%%%% RIEKA ZIVOTA
-
-\begin{minipage}{\textwidth}
+	
 \section{Rieka života}
-\subsection{Nad celou zemou}
-\textit{CAPO 2}
-\begin{multicols*}{2}
-\begin{guitar}	
+\begin{song}{Nad celou zemou}{2}
+	\textit{CAPO 2}
 	1.[G]Nad ce[D]lou ze[C]mou, Pán [D]od vek[G]ov,
 	nad k[D]aždým vr[C]chom každou [D]doli[G]nou.
 	No mojou [D]túž[C]bou Otče [D]je[Ami]dinou,
@@ -482,15 +532,10 @@
 	tak prosím [C]príď a [D]vládni [G]mi.
 	\\
 	R: + /:[Emi]Tak prosím [C]príď a [D]vládni [G]mi:/
-\end{guitar}
-\end{multicols*}
-\end{minipage}
-
-\begin{minipage}{\textwidth}
-\subsection{Dnes pieseň hrám}
-\textit{CAPO 2}
-\begin{multicols*}{2}
-\begin{guitar}	
+\end{song}
+	
+\begin{song}{Dnes pieseň hrám}{2}
+	\textit{CAPO 2}
 	[D]Dnes [A]pieseň [Hmi]hrám a [A]nie som [G]sám, 
 	Tebe [D]Ježiš môj [A]Majster.
 	[D]A [A]stále [Hmi]viac Ťa [A]túžim [G]mať 
@@ -504,94 +549,25 @@
 	Nechcem bez Teba [D] žiť,
 	ááá[F#mi]aáááá[G]aáááá
 	[G]Nechcem bez Teba [A] žiť.
-\end{guitar}
-\end{multicols*}
-\end{minipage}
-
-\begin{minipage}{\textwidth}
-\subsection{Poď, teraz je čas}
-\begin{multicols*}{2}
-\begin{guitar}
-	[D]Poď, teraz je čas vzdať [G]chvá[D]lu
-	[A]Poď, srdce svoje mu s [Emi]láskou [G]daj
-	[D]Poď, taký, aký si, [G]chváľ [D]ho
-	[A]Poď, predstúp pred kráľa, [Emi]príjme [G] ťa
-	[D]Tak poď.
-	\columnbreak
-	/: [G]Každý jazyk v ten deň vyzná[D], Ty si Pán,
-	[G]Každý Ti raz úctu [D]vzdá
-	[G]Tým, čo teraz s láskou Ťa [Hmi]hľadajú,
-	[Emi]Ty poklad vzácny [A]dáš :/
-	[D]Poď.
-\end{guitar}
-\end{multicols*}
-\end{minipage}
+\end{song}
+	
+\begin{song}{Poď, teraz je čas}{2}
+[D]Poď, teraz je čas vzdať [G]chvá[D]lu
+[A]Poď, srdce svoje mu s [Emi]láskou [G]daj
+[D]Poď, taký, aký si, [G]chváľ [D]ho
+[A]Poď, predstúp pred kráľa, [Emi]príjme [G] ťa
+[D]Tak poď.
+\columnbreak
+/: [G]Každý jazyk v ten deň vyzná[D], Ty si Pán,
+[G]Každý Ti raz úctu [D]vzdá
+[G]Tým, čo teraz s láskou Ťa [Hmi]hľadajú,
+[Emi]Ty poklad vzácny [A]dáš :/
+[D]Poď.
+\end{song}
 
 
-\begin{minipage}{\textwidth}
-\subsection{Srdce chvály}
-\begin{multicols}{2}
-\begin{guitar}	
-	1. [D]Hudba dohráva [A], všetko stíši [Emi]sa. 
-	A ja prichádz[A]am. [D]Priniesť niečo snáď [A],
-	čo pravú cenu [Emi]má , čo by si mal [A]rád.
-	\\
-	R1: [Emi]Viac ako [D]pieseň ti [A]dám, 
-	lebo to čo žiadaš. 
-	[Emi]Nie je len [D]pieseň sam[A]a, 
-	[Emi]ak niečo [D]iné sa z[A]dá.
-	Ty vieš čo je pravda, 
-	[Emi]ty vidíš, č[D]o v srdci [A]mám.
-	\\
-	2. Ne[D]konečný k[A]ráľ, nik nevysloví[Emi], 
-	čo ti patriť [A]má. 
-	Aj[D] keď slabý s[A]om, všetko to čo mám[Emi],
-	každý dych je tv[A]oj.
-	\\
-	R2: [D]Túžim sa vrátiť do [A]srdca chvály, 
-	kde si [Emi]jedine ty, [G]jedine ty [A]Ježiš [D].
-	Odpusť mi Pane, že [A]neverný som. 
-	Si to [Emi]jedine ty, [G]jedine ty [A]Ježiš [D].
-\end{guitar}
-\end{multicols}
-\end{minipage}
-
-\begin{minipage}{\textwidth}
-\subsection{Dávam všetko}
-\textit{CAPO 2}\\
-\begin{multicols}{2}
-\begin{guitar}	
-	1. [D] Dnes chcel by som Ti [A] dať
-	to, čo v srdci [G] mám
-	a dávam [A] na ol [Hmi] tár
-	k Tvojim [A] nohám kráľov [D] Kráľ.
-	\\
-	D[D]nes kladiem svoje [A]sny,
-	ja sa zriekam svojich [G]práv,
-	už nechcem p[A]yšný s[Hmi]táť,
-	chcem no[A]vý život [D]mať.
-	\\
-	R. /: [Hmi] Dáá [A] vam [D] všetko,
-	[G] to čo [D] mám, [Hmi] Tebe, [A] kráľ. [G] :/
-	\columnbreak
-	2. K[D]eď túto pieseň h[A]rám
-	pod krížom stojím [G]sám
-	a všetky [A]bohat[Hmi]stvá
-	za sme[A]ti pokla[D]dám.
-	\\
-	Ch[D]cem poznať Teba k[A]ráľ,
-	slávu mena, ktoré [G]máš,
-	tá radosť [A]neko[Hmi]nčí
-	aj keď s[A] Tebou trpieť [D]mám.
-\end{guitar}
-\end{multicols}
-\end{minipage}
-
-\begin{minipage}{\textwidth}
-\subsection{Všetko to, čo chcem}
-\textit{CAPO 1}\\
-\begin{multicols}{2}
-\begin{guitar}	
+\begin{song}{Všetko to, čo chcem}{2}
+	\textit{CAPO 1}\\
 	[G]Všetko to, čo [C]chcem, 
 	[D]je byť blízko.
 	A č[G]o povedať [C]chcem, 
@@ -603,15 +579,36 @@
 	[G]A ľúbiš ma [C]po všetky [D]dni,
 	[G]Stá-[C]le, [Emi]aj s mojimi [D]pádmi ma [C] ľúbiš.
 	[G]Ma ľúbiš, ma ľúbiš.
-\end{guitar}
-\end{multicols}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Nádherný Boh}
-\textit{CAPO 2}
-\begin{multicols*}{3}
-\begin{guitar}	
+\begin{song}{Dávam všetko}{2}
+	\textit{CAPO 2}
+	1. [D] Dnes chcel by som Ti [A] dať
+	to, čo v srdci [G] mám
+	a dávam [A] na ol [Hmi] tár
+	k Tvojim [A] nohám kráľov [D] Kráľ.
+	\\
+	D[D]nes kladiem svoje [A]sny,
+	ja sa zriekam svojich [G]práv,
+	už nechcem p[A]yšný s[Hmi]táť,
+	chcem no[A]vý život [D]mať.
+	\columnbreak
+	R. /: [Hmi] Dáá [A] vam [D] všetko,
+	[G] to čo [D] mám, [Hmi] Tebe, [A] kráľ. [G] :/
+	\\
+	2. K[D]eď túto pieseň h[A]rám
+	pod krížom stojím [G]sám
+	a všetky [A]bohat[Hmi]stvá
+	za sme[A]ti pokla[D]dám.
+	\\
+	Ch[D]cem poznať Teba k[A]ráľ,
+	slávu mena, ktoré [G]máš,
+	tá radosť [A]neko[Hmi]nčí
+	aj keď s[A] Tebou trpieť [D]mám.
+\end{song}
+
+\begin{song}{Nádherný Boh}{3}
+	\textit{CAPO 2}
 	[C] Úžasný, tak [D] úžasný
 	si [G]v láske bez hraníc,
 	Tvoj k[C]ríž mi dáva
@@ -648,15 +645,10 @@
 	mne v [C]duši pieseň [D]znie,
 	mne v [C]duši pieseň [D]znie,
 	nádherný [G]Boh.
-\end{guitar}
-\end{multicols*}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Môj Ježiš, si spásou}
-\textit{CAPO 1}
-\begin{multicols*}{2}
-\begin{guitar}	
+\begin{song}{Môj Ježiš, si spásou}{2}
+	\textit{CAPO 1}
 	1.[A]Môj Ježiš, [E]si Spásou.
 	[F#]Pán nie je [E]nik ako [D]Ty.
 	Chcem každý[A] čas,
@@ -675,19 +667,14 @@
 	že [A]sláva a moc majes[D]tát Ti pat[E]rí.
 	[A]Hory pred trónom sa s[D]kláňajú
 	a Ty [E]sám [D]vládneš [E]slávne.
-	
+	\\
 	[A]Spievam Ti rád, veď s[D]i Pán môj [E]a Kráľ,
 	[A]naveky chcem stáť, Teba s[D]tále mať rá[E]d.
 	[A]Nič nie je viac ako [D]láska čo da[E]l si [A]nám.
-\end{guitar}
-\end{multicols*}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Síl nám pribúda}
-\textit{CAPO 3}
-\begin{multicols*}{2}
-\begin{guitar}	
+\begin{song}{Síl nám pribúda}{2}
+	\textit{CAPO 3}
 	/:Síl ná[G]m pribúda, 
 	[C]keď na Teba č[G]akáme,
 	[C]keď na Teba č[G]akáme,
@@ -703,15 +690,10 @@
 	potešíš plačú[Emi]cich,
 	na krídlach orlích ,
 	k [C]výš[D]kam [C]dví[D]haš [G]nás.:/
-\end{guitar}
-\end{multicols*}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Zvelebený Pán}
-\textit{CAPO 2}
-\begin{multicols*}{2}
-\begin{guitar}	
+\begin{song}{Zvelebený Pán}{2}
+	\textit{CAPO 2}
 	1. [G]Zvele[D]bený buď, 
 	tam kde [Emi]kraj medom [C]oplýva.
 	Tam, kde [G]rieky vždy [D]hojné sú,
@@ -751,15 +733,32 @@
 	máš [Emi]právo dať aj [C]vziať
 	Ja [G]stále spievam [D]rád, 
 	Z[Emi]velebený [C]Pán.:/ + 2x Ref.2
-\end{guitar}
-\end{multicols*}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Vládca}
-\textit{CAPO 2}
-\begin{multicols*}{2}
-\begin{guitar}	
+\begin{song}{Daj mi výhľad}{2}
+	Teba, [C]Bože môj, hľadám a [G]vyzerám
+	daj mi [F]výhľad [Am]odkiaľ vidíš [G]svet.
+	Len Ty, [C]Bože môj, si mojou [G]záchranou
+	daj mi [F]múdrosť, [Am]Ty vieš čo robiť [G]mám.
+	\\
+	Teba, [C]Bože môj, hľadám a [G]vyzerám
+	daj mi [F]výhľad [Am]odkiaľ vidíš [G]svet.
+	Len Ty, [C]Bože môj, si mojou [G]záchranou
+	daj mi [F]múdrosť, [Am]Ty vieš kam kráčať [G]mám.
+	\columnbreak
+	Zo všet[F]kých síl [Dm]Teba [G]len
+	nave[F]ky nech [Dm]milu[G]jem
+	Si mojou [F]skalou, [Dm]si môj [G]Pán
+	od [C]vekov navždy [F]nech Teba [G]milu[C]jem.
+	\\
+	Ale[F]luja, [Dm]kraľuj [G]nám
+	Ale[F]luja, [Dm]kraľuj [G]nám
+	Ale[F]luja, [Dm]kraľuj [G]nám,
+	si [C]Kráľom nave[F]ky, ale[G]lu[C]ja
+\end{song}
+
+\begin{song}{Vládca}{2}
+	\textit{CAPO 2}
 	[C]Každý z nás dúfa [G]v súcit 
 	a bezhraničnú[Emi] lásku.
 	Ó, [D]Pane, zmiluj s[C]a.
@@ -787,88 +786,70 @@
 	[G]nech Ťa svet [D]vidí, Spievaj, 
 	[C]Tebe sláva, 
 	[G]Kráľ môj víťaz[D]ný, Ježiš.:/ + Ref.
-\end{guitar}
-\end{multicols*}
-\end{minipage}
-
-\begin{minipage}{\textwidth}
-\subsection{Daj mi výhľad}
-\begin{multicols*}{2}
-\begin{guitar}	
-	Teba, [C]Bože môj, hľadám a [G]vyzerám
-	daj mi [F]výhľad [Am]odkiaľ vidíš [G]svet.
-	Len Ty, [C]Bože môj, si mojou [G]záchranou
-	daj mi [F]múdrosť, [Am]Ty vieš čo robiť [G]mám.
-	\\
-	Teba, [C]Bože môj, hľadám a [G]vyzerám
-	daj mi [F]výhľad [Am]odkiaľ vidíš [G]svet.
-	Len Ty, [C]Bože môj, si mojou [G]záchranou
-	daj mi [F]múdrosť, [Am]Ty vieš kam kráčať [G]mám.
-	\columnbreak
-	Zo všet[F]kých síl [Dm]Teba [G]len
-	nave[F]ky nech [Dm]milu[G]jem
-	Si mojou [F]skalou, [Dm]si môj [G]Pán
-	od [C]vekov navždy [F]nech Teba [G]milu[C]jem.
-	\\
-	Ale[F]luja, [Dm]kraľuj [G]nám
-	Ale[F]luja, [Dm]kraľuj [G]nám
-	Ale[F]luja, [Dm]kraľuj [G]nám,
-	si [C]Kráľom nave[F]ky, ale[G]lu[C]ja
-\end{guitar}
-\end{multicols*}
-\end{minipage}
+\end{song}
 
 \newpage
 %%%%%%%%%%%%%% ESPE
 \section{EsPé}
 
-\begin{minipage}{\textwidth}
-\subsection{Pre Teba áno}
-\begin{multicols}{2}
-	\begin{guitar}
-		\textit{CAPO 5}
-		[C]Nevinný si, odsúdia ťa, [G]vieš
-		o ranách, ktoré dotknú sa ťa, [C]vieš,
-		prebodnú a vysmejú ťa, [G]vieš,
-		poznáš nás a predsa ideš [C]vpred...
-		Opustený dávaš všetko, [G]vieš,
-		krv a voda z teba musí [C]tiecť,
-		výdychom mi dych navraciaš [G]späť,
-		poznáš ma a predsa šepkáš...
-		\\
-		Ref.1: (Za teba) [C] Áno, za teba [D]pôjdem.
-		Hoden si [Emi]prijať, čo strácam,
-		svoj život za tvoj [G]dám.
-		\\
-		[C]Kráčam s tebou, odsúdia ma, [G]viem
-		o ranách, ktoré dotknú sa ma, [C]viem,
-		prebodnú a vysmejú ma, [G]viem,
-		poznám ich a predsa idem[C]...
-		Opustený dávam všetko, [G]viem,
-		krv a voda aj zo mňa musí [C]tiecť,
-		ľúbiť ťa, cez ľudí vôkol [G]chcem,
-		keď nevládzem, ma dvíha tvoje...
-		\\
-		Ref.1: (Za teba) [C] Áno, za teba [D]pôjdem!
-		Hoden si [Emi]prijať, čo strácam,
-		svoj život za tvoj [G]dám.
-		\\
-		Bridge: [C]Moje ústa máš – [D]hovor, po čom túžiš.
-		[Emi]Moje nohy máš – [G]kráčaj, kam len túžiš.
-		[C]Moje ruky máš – [D]konaj to, čo túžiš.
-		[Emi]Moje srdce máš – [G]miluj, ako vieš len ty.
-		\\
-		Ref.2: (Pre teba) [C] Áno, pošli ma, [D]pôjdem!
-		Ohlásim [Emi]zajatým slobodu, zlomeným nádej [G]dám .
-	\end{guitar}
-\end{multicols}
-\end{minipage}
+\begin{song}{Pre Teba áno}{2}\textit{CAPO 5}
+	[C]Nevinný si, odsúdia ťa, [G]vieš
+	o ranách, ktoré dotknú sa ťa, [C]vieš,
+	prebodnú a vysmejú ťa, [G]vieš,
+	poznáš nás a predsa ideš [C]vpred...
+	Opustený dávaš všetko, [G]vieš,
+	krv a voda z teba musí [C]tiecť,
+	výdychom mi dych navraciaš [G]späť,
+	poznáš ma a predsa šepkáš...
+	\\
+	Ref.1: (Za teba) [C] Áno, za teba [D]pôjdem.
+	Hoden si [Emi]prijať, čo strácam,
+	svoj život za tvoj [G]dám.
+	\\
+	[C]Kráčam s tebou, odsúdia ma, [G]viem
+	o ranách, ktoré dotknú sa ma, [C]viem,
+	prebodnú a vysmejú ma, [G]viem,
+	poznám ich a predsa idem[C]...
+	Opustený dávam všetko, [G]viem,
+	krv a voda aj zo mňa musí [C]tiecť,
+	ľúbiť ťa, cez ľudí vôkol [G]chcem,
+	keď nevládzem, ma dvíha tvoje...
+	\\
+	Ref.1: (Za teba) [C] Áno, za teba [D]pôjdem!
+	Hoden si [Emi]prijať, čo strácam,
+	svoj život za tvoj [G]dám.
+	\\
+	Bridge: [C]Moje ústa máš – [D]hovor, po čom túžiš.
+	[Emi]Moje nohy máš – [G]kráčaj, kam len túžiš.
+	[C]Moje ruky máš – [D]konaj to, čo túžiš.
+	[Emi]Moje srdce máš – [G]miluj, ako vieš len ty.
+	\\
+	Ref.2: (Pre teba) [C] Áno, pošli ma, [D]pôjdem!
+	Ohlásim [Emi]zajatým slobodu, zlomeným nádej [G]dám .
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Buď odvážny}
-\textit{CAPO 2}
-\begin{multicols}{2}
-\begin{guitar}
+\begin{songgroup}{2}
+\begin{groupitem}{Nech padá dážď}
+	Nech padá [Ami]dážď, padá [F]dážď
+	O[C]tvor, môj Pán svoju [G]rieku
+	\\
+	Vidieť ťa [F]túžim, zjav svoju [G]slávu
+	poznať ťa [Ami]môžem [G]viac
+	\\
+	Nech padá [F]dážď, padá [G]dážď
+	O[Ami]tvor, môj Pán svoju [G]rieku
+\end{groupitem}
+\columnbreak
+\begin{groupitem}{Náš Pán On je kráľov Kráľ}
+	[Emi]Náš [C]Pán On je [G]kráľov Kráľ, 
+	jeho [D]trón, bude [Emi]na veky stáť, 
+	On [C]má všetku [G]vládu a moc, 
+	náš [Ami]Pán, On je [Hmi]kráľov [Emi]Kráľ.
+\end{groupitem}
+\end{songgroup}
+
+\begin{song}{Buď odvážny}{2}
+	\textit{CAPO 2}
 	1. /:Stále [Emi7] viac Teba hľa [G] dám,
 	nechcem [C9] žiť bez Teba.
 	Skrze Tvoj [Emi7] kríž znovu vi [G] dím,
@@ -895,39 +876,10 @@
 	lebo [Emi7] prijímam Spásu, [D] ako Boží dar. :/
 	\\
 	Ref. + Bridge + Ref.
-\end{guitar}
-\end{multicols}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\begin{multicols*}{2}
-	\subsection{Nech padá dážď}
-	\begin{guitar}
-		Nech padá [Ami]dážď, padá [F]dážď
-		O[C]tvor, môj Pán svoju [G]rieku
-		\\
-		Vidieť ťa [F]túžim, zjav svoju [G]slávu
-		poznať ťa [Ami]môžem [G]viac
-		\\
-		Nech padá [F]dážď, padá [G]dážď
-		O[Ami]tvor, môj Pán svoju [G]rieku
-	\end{guitar}
-\columnbreak
-\subsection{Náš Pán On je kráľov Kráľ}
-\begin{guitar}
-	[Emi]Náš [C]Pán On je [G]kráľov Kráľ, 
-	jeho [D]trón, bude [Emi]na veky stáť, 
-	On [C]má všetku [G]vládu a moc, 
-	náš [Ami]Pán, On je [Hmi]kráľov [Emi]Kráľ.
-\end{guitar}
-\end{multicols*}
-\end{minipage}
-
-\begin{minipage}{\textwidth}
-\subsection{Veríme Ti}
-\textit{CAPO 4}
-\begin{multicols}{2}
-\begin{guitar}
+\begin{song}{Veríme Ti}{2}
+	\textit{CAPO 4}
 	[Emi]Boh, čo slepým [Hmi]dáva zrak,
 	[C]Búra múry predo mnou,
 	Búra múry predo mnou.
@@ -955,14 +907,9 @@
 	Si Bohom zázrakov
 	\\
 	Ref.
-\end{guitar}
-\end{multicols}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Náš Boh}
-\begin{multicols}{2}
-\begin{guitar}
+\begin{song}{Náš Boh}{2}
 	[Emi]Vodu na [C]víno me[G]níš,
 	[Emi]otváraš [C]oči sle[G]pým,
 	nikto [Ami]nie je ako [D]Ty.
@@ -984,14 +931,9 @@
 	[C]nemôže vládnuť strach
 	[G]keď náš Boh je s nami
 	[D]kto môže stáť proti nám?:/ \textit{+ 2x Ref.}
-\end{guitar}
-\end{multicols}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Na krídlach lásky}
-\begin{multicols}{2}
-\begin{guitar}
+\begin{song}{Na krídlach lásky}{2}
 	[Emi]Voláš ma tam, kde [G]tvoja sláva prebýva,
 	[D]voláš ma tam, kde [C]láska sa neskrýva.
 	[Emi]Silu mi dáš [G]aj keď nevládzem,
@@ -1009,127 +951,142 @@
 	ja víťa[G]zím,
 	kým pohľad na teba [D]mám
 	ja mám dosť [Emi]síl.
-\end{guitar}
-\end{multicols}
-\end{minipage}
+\end{song}
 
-
-\begin{minipage}{\textwidth}
-\subsection{Nekonečná láska (Reckless love)}
-\begin{multicols}{2}
-\begin{guitar}
+\begin{song}{Nekonečná láska (Reckless love)}{2}
 	Verse 1:
-	[Emi]Skôr než uzrel som sv[D]et, 
-	ty spieval si n[C]ado mnou.
-	[Emi]Vždy si bol k[D]u mne tak láska[C]vý.
-	[Emi]Skôr než dýchať som sm[D]el, 
-	vdýchol si ži[C]vot svoj.
-	[Emi]Vždy si bol k[D]u mne tak láska[C]vý.
-	\\
-	Verse 2:
-	[Emi]Skôr než tvojim som b[D]ol, 
-	o mňa si [C]zápasil.
-	[Emi]Vždy si bol k[D]u mne tak láska[C]vý.
-	[Emi]Keď slabý som b[D]ol, 
-	ty za mňa si z[C]aplatil.
-	[Emi]Vždy si bol k[D]u mne tak láska[C]vý.
-	\columnbreak
-	Chorus:
-	O ty m[Emi]ocná, večná n[D]ekonečná 
-	[C]láska Otca k [G]nám.
-	Ty op[Emi]ustíš stáda, n[D]eprestávaš 
-	[C]kým nenájdeš m[G]a.
-	Nedá sa [Emi]kúpiť, nedá zas[D]lúžiť, 
-	stále [C]dávaš seba v[G]iac.
-	O ty m[Emi]ocná, večná, n[D]ekonečná 
-	[C]láska Otca k [G]nám
-	\\
-	Bridge:
-	[Emi]Nie je tma čo neprež[D]iariš
-	Vrch ktorý nezd[C]oláš
-	Tak chceš ma [G]nájsť
-	\\
-	[Emi]Nie je múr ktorý nezv[D]alíš
-	Klam čo neodzbr[C]ojíš
-	Tak chceš ma [G]nájsť
-\end{guitar}
-\end{multicols}
-\end{minipage}
+[Emi]Skôr než uzrel som sv[D]et, 
+ty spieval si n[C]ado mnou.
+[Emi]Vždy si bol k[D]u mne tak láska[C]vý.
+[Emi]Skôr než dýchať som sm[D]el, 
+vdýchol si ži[C]vot svoj.
+[Emi]Vždy si bol k[D]u mne tak láska[C]vý.
+\\
+Chorus:
+O ty m[Emi]ocná, večná n[D]ekonečná 
+[C]láska Otca k [G]nám.
+Ty op[Emi]ustíš stáda, n[D]eprestávaš 
+[C]kým nenájdeš m[G]a.
+Nedá sa [Emi]kúpiť, nedá zas[D]lúžiť, 
+stále [C]dávaš seba v[G]iac.
+O ty m[Emi]ocná, večná, n[D]ekonečná 
+[C]láska Otca k [G]nám
+\columnbreak
+Verse 2:
+[Emi]Skôr než tvojim som b[D]ol, 
+o mňa si [C]zápasil.
+[Emi]Vždy si bol k[D]u mne tak láska[C]vý.
+[Emi]Keď slabý som b[D]ol, 
+ty za mňa si z[C]aplatil.
+[Emi]Vždy si bol k[D]u mne tak láska[C]vý.
+\\
+Bridge:
+[Emi]Nie je tma čo neprež[D]iariš
+Vrch ktorý nezd[C]oláš
+Tak chceš ma [G]nájsť
+[Emi]Nie je múr ktorý nezv[D]alíš
+Klam čo neodzbr[C]ojíš
+Tak chceš ma [G]nájsť
+\end{song}
 
-\begin{minipage}{\textwidth}
-	\subsection{Si cesta (Way Maker)}
-	\begin{multicols}{2}
-		\begin{guitar}
-			Si prítomný[F], v strede našich chvál[C],
-			ja chválim ť[G]a, ja chválim ť[Am]a.
-			Si prítomný, konáš mocne v nás, 
-			ja chválim ťa, ja chválim ťa.
-			\\
-			[F]Si cesta, zazraky tvoríš, 
-			[C]prísľuby plníš, 
-			dáš svetlo v tmá[G]ch,môj Boh, 
-			tým si pre mňa T[Am]y.
-			\\
-			Si prítomný, dotýkaš sa rán, 
-			ja chválim ťa, ja chválim ťa.
-			Si prítomný, uzdravuješ nás, 
-			ja chválim ťa, ja chválim ťa.
-			\columnbreak
-			Si prítomný[], srdciam milosť dáš, 
-			ja chválim ťa, ja chválim ťa.
-			Si prítomný, môj život pretváraš, 
-			ja chválim ťa, ja chválim ťa.
-			\\ 
-			tým si pre mňa T[F]y. 
-			tým si pre mňa T[C]y. 
-			tým si pre mňa T[G]y. 
-			tým si pre mňa T[Am]y.
-			\\
-			[F]Aj keď to vždy nevidím, Ty konáš.
-			[C]Aj keď to vždy necítim, Ty konáš.
-			[G]Ja to viem, že Ty to nevzdáš,
-			á[Am]no viem, nikdy to nevzdáš.
-		\end{guitar}
-	\end{multicols}
-\end{minipage}
+\begin{song}{Srdce chvály}{3}
+\textit{\color{gray}CAPO 1}
+1.[D]Hudba dohrá[A]va, všetko stíši [Emi]sa
+a ja prichá[A]dzam
+[D]priniesť niečo s[A]náď, čo pravú cenu [Emi]má
+čo by si mal [A]rád
+\\
+2.[D]Nekonečný K[A]ráľ, nik nevyslo[Emi]ví
+čo ti patriť [A]má
+[D]Aj keď slabý [A]som, všetko to čo [Emi]mám
+každý dych je [A]tvoj
+\columnbreak
+\textit{\color{gray}Prechorus}
+[Emi]Viac ako [D]pieseň ti [A]dám
+lebo to, čo žiadaš
+[Emi]nie je len [D]pieseň sa[A]ma
+[Emi]ak niečo [D]iné sa [A]zdá
+ty vieš čo je pravda
+[Emi]Ty vidíš, č[D]o v srdci [A]mám
+\\
+\textit{\color{gray}Chorus: 2x}
+[D]Túžim sa vrátiť do [A]srdca chvály
+kde si [Emi]jedine ty, [G]jedine t[A]y, Jež[D]iš
+[D]Odpusť mi Pane, že [A]neverný som
+Si to [Emi]jedine ty, [G]jedine t[A]y, Jež[D]iš
+\columnbreak
+\textit{\color{gray}Outro:}
+[D]Viac ako pieseň ti [A]dám
+viac ako pieseň ti [Emi]dám
+[G]viac ako [A]pieseň ti [D]dám
+[D]Ty vidíš, čo v srdci [A]mám
+ty vidíš, čo v srdci [Emi]mám
+č[G]o v srdci [A]mám[D].
+\end{song}
 
+
+\begin{song}{Si cesta (Way Maker)}{2}
+Si prítomný[F], v strede našich chvál[C],
+ja chválim ť[G]a, ja chválim ť[Am]a.
+Si prítomný, konáš mocne v nás, 
+ja chválim ťa, ja chválim ťa.
+\\
+[F]Si cesta, zazraky tvoríš, 
+[C]prísľuby plníš, 
+dáš svetlo v tmá[G]ch,môj Boh, 
+tým si pre mňa T[Am]y.
+\\
+Si prítomný, dotýkaš sa rán, 
+ja chválim ťa, ja chválim ťa.
+Si prítomný, uzdravuješ nás, 
+ja chválim ťa, ja chválim ťa.
+\columnbreak
+Si prítomný[], srdciam milosť dáš, 
+ja chválim ťa, ja chválim ťa.
+Si prítomný, môj život pretváraš, 
+ja chválim ťa, ja chválim ťa.
+\\ 
+tým si pre mňa T[F]y. 
+tým si pre mňa T[C]y. 
+tým si pre mňa T[G]y. 
+tým si pre mňa T[Am]y.
+\\
+[F]Aj keď to vždy nevidím, Ty konáš.
+[C]Aj keď to vždy necítim, Ty konáš.
+[G]Ja to viem, že Ty to nevzdáš,
+á[Am]no viem, nikdy to nevzdáš.
+\end{song}
 
 \newpage
 %%%%%%%%%%%%%% LCH
 
-\begin{minipage}{\textwidth}
 \section{Lamačské chvály}
-\begin{multicols}{2}
-\subsection{Ovečka / Ja milujem Kráľa a on ľúbi}
-\begin{guitar}	
-	[D]Som Tvojou ovečkou	
-	[A]malou a voňavou	
-	č[Hmi]istou a radostnou 
-	[G]Tebou ľúbenou.
-	\\
-	[D]Ja milujem Kráľa a on ľúbi mňa
-	[A]ja milujem Kráľa a on ľúbi mňa
-	[Hmi]ja milujem Kráľa a on ľúbi [G]mňa.
-\end{guitar}
-\columnbreak
-\subsection{Ty si Boh ktorý vládne}
-\begin{guitar}	
-	/: Ty si [C]Boh ktorý vládne[G], na [A]nebi[F],  
-	Ty si [C]Boh ktorý vládne[G], na [A]zemi[F]. :/ 
-	\\
-	/: Kto Ťa [C]oslávi[G], kto Ťa [A]vyvýši[F], 
-	kto Ti[C] chválu vzdá[F], ak nie[A] my[F]? :/
-	\\
-	/: Ja Ťa [C]oslávim[G], ja Ťa [A]vyvýšim[F],
-	ja Ti ch[C]válu vzdám[F], Jež[A]iš môj[F]. :/
-\end{guitar}
-\end{multicols}
-\end{minipage}
 
-\begin{minipage}{\textwidth}
-\subsection{Verný si}
-\begin{multicols*}{2}
-\begin{guitar}
+\begin{songgroup}{2}
+	\begin{groupitem}{Ovečka / Ja milujem Kráľa a on ľúbi}
+		[D]Som Tvojou ovečkou	
+		[A]malou a voňavou	
+		č[Hmi]istou a radostnou 
+		[G]Tebou ľúbenou.
+		\\
+		[D]Ja milujem Kráľa a on ľúbi mňa
+		[A]ja milujem Kráľa a on ľúbi mňa
+		[Hmi]ja milujem Kráľa a on ľúbi [G]mňa.
+	\end{groupitem}
+	\columnbreak
+	\begin{groupitem}{Ty si Boh ktorý vládne}
+		/: Ty si [C]Boh ktorý vládne[G], na [A]nebi[F],  
+		Ty si [C]Boh ktorý vládne[G], na [A]zemi[F]. :/ 
+		\\
+		/: Kto Ťa [C]oslávi[G], kto Ťa [A]vyvýši[F], 
+		kto Ti[C] chválu vzdá[F], ak nie[A] my[F]? :/
+		\\
+		/: Ja Ťa [C]oslávim[G], ja Ťa [A]vyvýšim[F],
+		ja Ti ch[C]válu vzdám[F], Jež[A]iš môj[F]. :/
+	\end{groupitem}
+\end{songgroup}
+
+\begin{song}{Verný si}{2}
 	1.Vž[C]dy keď vstávam, blízko si,
 	K[F]eď si líham, blízko si,
 	A[Ami]j keď ťa [G]nevi[F]dím,
@@ -1158,14 +1115,9 @@
 	Nech[C] tvoja láska pane, 
 	sa [F]mojou láskou stane,
 	[Ami] ja [G]ti ve[F]rím.
-\end{guitar}
-\end{multicols*}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{El Shaddai}
-\begin{multicols*}{2}
-\begin{guitar}
+\begin{song}{El Shaddai}{2}
 	[C]Vystačím si sám, [E]tak si vravím,
 	ž[Ami]e všetko už mám, [F]cítim sa tým pravým.
 	[C]Keď ku tebe prídem a [E]dotkneš sa mi dlaní,
@@ -1201,20 +1153,16 @@
 	Si stále so mnou a je ti to vzácne.
 	Zvádzaš ma, zvádzaš,
 	a ja nechal som sa ti zviesť.
-\end{guitar}
-\end{multicols*}
-\end{minipage}
+\end{song}
 
 \newpage
 %%%%%%%%%%%%%% HEARTBEAT
 
-\begin{minipage}{\textwidth}
 \section{Heartbeat}
-\subsection{Aleluja}
-\begin{multicols*}{3}
-\begin{guitar}
+
+\begin{song}{Aleluja}{3}
 	A F\# E H Woah
-		
+	
 	[A]Budem chváliť, 
 	[F#]celým telom,
 	[C#]svojim tancom,
@@ -1239,18 +1187,13 @@
 	[H]nad každým trápením
 	[C#]učíš ma tancovať
 	[G#]počujem, spievaš mi.
-\end{guitar}
-\end{multicols*}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-	\subsection{Verný Boh}
-\begin{multicols*}{2}
-\begin{guitar}
-	[Hmi]Nemôžem [D]prestať [G6]myslieť na teba,
-	[Hmi]nemôžem [D]sa ťa [G6] striasť.
-	[Hmi]Si ako [D]oheň v mojom [G6]vnútri, 
-	čo páli ma,[Hmi D G6] páliš ma.
+\begin{song}{Verný Boh}{2}
+	[Hmi]Nemôžem [D]prestať [G]myslieť na teba,
+	[Hmi]nemôžem [D]sa ťa [G]striasť.
+	[Hmi]Si ako [D]oheň v mojom [G]vnútri, čo páli ma,
+	[Hmi D] páliš [G]ma.
 	\\
 	[Hmi] Si [D]všetko, čo [G]chcem,
 	[Hmi] si [D]všetko, čo [G]mám,
@@ -1267,14 +1210,12 @@
 	[D] že ľúbiš ma a ja ľúbim teba.
 	[Emi]Ohlásim zo striech,
 	že si [C]verný a verný a verný [G]kráľ.
-\end{guitar}
-\end{multicols*}
-\end{minipage}
+	\\
+	Si verný [G]Kráľ, Woa[Hmi]h
+	Si verný [Emi]Kráľ, Woa[C]h
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Striasam Zo Seba Bohatstvo Tohto Sveta}
-\begin{multicols*}{4}
-\begin{guitar}
+\begin{song}{Striasam Zo Seba Bohatstvo Tohto Sveta}{4}
 	[D]Striasam zo seba
 	[A]bohatstvo tohto sveta
 	[G]nech znova vidím Ťa,
@@ -1316,7 +1257,7 @@
 	Tebe chválu [Emi]vzdám[F#].
 	\\
 	[D]Lebo ak budem
-	 mlčať,
+	mlčať,
 	[A]kamene budú kričať.
 	[Hmi]Slávny, si slávny 
 	[G]Kráľ.
@@ -1337,120 +1278,65 @@
 	[Emi]a každým dychom
 	Tebe chválu [D]vzdám,
 	Tebe chválu [G]vzdám[A].
-\end{guitar}
-\end{multicols*}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Vezmi ma}
-\begin{multicols*}{2}
-\begin{guitar}
+\begin{song}{Vezmi ma}{2}
 	/:[G](Prosím)Vezmi ma na chvíľu z tejto Zeme,
 	nechám sa [D]unášať vetrom do vnútrozeme.
 	A [Emi]dívať sa na všetko z výšky, zhora,
 	chcem [C]zabudnúť, čo bolo dnes a včera.:/
-	\\
+	\columnbreak
 	/: Na miesta [G]nové, (zaveď ma Kráľ)
 	na miesta [D]nepoznané, (zaveď ma Kráľ).
 	Aj tie [Emi]zabudnuté, (zaveď ma Kráľ),
 	tam, kde [C]moje srdce pre to Tvoje začalo biť.:/
-\end{guitar}
-\end{multicols*}
-\end{minipage}
+\end{song}
 
-
-\begin{minipage}{\textwidth}
-\subsection{Víchor}
-\begin{multicols*}{2}
-	\begin{guitar}
-		P[Emi]ríď ako mocná rieka,
-		ne[G]ch sucho zmení sa v [D]dážď, jarný [C]dážď.
-		Ne[Emi]ch láska premôže ma
-		[G]ako mocný huri[D]kán, huri[C]kán.
-		\\
-		Sprav zo mňa ví[Emi]chor,
-		ktorý prišiel z púšte.
-		A [C]vášeň, ktorá siaha vyššie.
-		A lá[D]sku, veď mojou túžbou je mať Ťa v[C]iac.
-		Len mať Ťa viac.
-		\\
-		Prichádza mocná rieka
-		a sucho mení sa v dážď, jarný dážď.
-		Tvoja láska premáha ma
-		ako mocný hurikán, hurikán.
-		\columnbreak
-		[Emi]Už vidím nový dážď.
-		[G]Vidím nový dážď.
-		[D]Počujem hukot vody,
-		kt[C]orá sa valí na nás.
-		\\
-		[Emi]Ja vidím nový dážď.
-		[G]Už vidím nový dážď.
-		Vs[D]távam zo svojho strachu.
-		Ve[C]rím, že uzriem Ťa zas[Emi G D]. 
-		Ve[C]rím, že uzriem Ťa zas.
-	\end{guitar}
-\end{multicols*}
-\end{minipage}
-
-
-\begin{minipage}{\textwidth}
-\subsection{Milosťou žijem}
-\begin{multicols*}{3}
-	\begin{guitar}
-		S[F]trhol ma do tanca
-		s[Ami]rdcom na srdce
-		T[Dmi]ajomstvom bláznovstva
-		[B]láskou ma [C]omámil
-		\\
-		Milosťou žijem
-		nech robí vo mne
-		čo sa jej zapáči
-		čo sa jej zachce
-		\columnbreak
-		Vodí ma do záhrad
-		stúpame do kopca
-		Vodu mi podáva
-		čo tečie z jeho rán
-		\\
-		A čím viac pijem z nej
-		tým viac smädí ma
-		Tá voda živá je
-		srdce mi obmýva
-		\columnbreak
-		Až [Dmi]do dôsledkov
-		krva[Ami]vých stôp
-		[B]Víťaznou vierou
-		[C]a Božou mocou
-		\\
-		Až [Gmi]do dôsledkov
-		krva[F]vých stôp
-		[Dmi]Víťaznou vierou
-		[C]a Božou mocou
-	\end{guitar}
-\end{multicols*}
-\end{minipage}
-
-\begin{minipage}{\textwidth}
-\begin{multicols*}{2}
-\subsection{Svitanie}
-\begin{guitar}
-	[C#mi]Moje srdce len Tebe spieva
-	[A]Moja duša chválou znie
-	[E]Aj keď svet sa stále stmieva
-	[H]Ja chcem tu vidieť svitanie[C#mi].
+\begin{song}{Víchor}{2}
+	P[Emi]ríď ako mocná rieka,
+	ne[G]ch sucho zmení sa v [D]dážď, jarný [C]dážď.
+	Ne[Emi]ch láska premôže ma
+	[G]ako mocný huri[D]kán, huri[C]kán.
 	\\
-	R: [C#mi]Svitani[A]e Ooo[E]oo,
-	[H]ja chcem tu vidieť svitanie[C#mi].
-	Svitani[A]e Ooo[E]ooo[H].
+	Sprav zo mňa ví[Emi]chor,
+	ktorý prišiel z púšte.
+	A [C]vášeň, ktorá siaha vyššie.
+	A lá[D]sku, veď mojou túžbou je mať Ťa v[C]iac.
+	Len mať Ťa viac.
 	\\
-	[C#mi]Ako tvoja rieka čo preráža skaly
-	[A]Ako tvoji vtáci čo letia do diali
-	[E]Ako tvoje stromy nech hľadím do [H]výšavy.
-\end{guitar}
+	Prichádza mocná rieka
+	a sucho mení sa v dážď, jarný dážď.
+	Tvoja láska premáha ma
+	ako mocný hurikán, hurikán.
+	\columnbreak
+	[Emi]Už vidím nový dážď.
+	[G]Vidím nový dážď.
+	[D]Počujem hukot vody,
+	kt[C]orá sa valí na nás.
+	\\
+	[Emi]Ja vidím nový dážď.
+	[G]Už vidím nový dážď.
+	Vs[D]távam zo svojho strachu.
+	Ve[C]rím, že uzriem Ťa zas[Emi G D]. 
+	Ve[C]rím, že uzriem Ťa zas.
+\end{song}
+
+\begin{songgroup}{2}
+	\begin{groupitem}{Svitanie}
+		[C#mi]Moje srdce len Tebe spieva
+		[A]Moja duša chválou znie
+		[E]Aj keď svet sa stále stmieva
+		[H]Ja chcem tu vidieť svitanie.
+		\\
+		Svitan[C#]ie, svitan[A]ie, woa[E]h
+		([H]chcem tu vidieť)
+		\\
+		[C#mi]Ako tvoja rieka čo preráža skaly
+		[A]Ako tvoji vtáci čo letia do diali
+		[E]Ako tvoje stromy nech hľadím do [H]výšavy.
+	\end{groupitem}
 \columnbreak
-\subsection{Nech tvoja sláva}
-\begin{guitar}
+\begin{groupitem}{Nech tvoja sláva}
 	[C#]Nech Tvoja sláva naplní [A]zem,
 	Teba z [E]tváre do tváre vidieť [H]chcem.
 	\\
@@ -1461,14 +1347,10 @@
 	\\
 	[A]Láskou premože[E]ný
 	[H]tebou som premož[C#]ený
-\end{guitar}
-\end{multicols*}
-\end{minipage}
+\end{groupitem}
+\end{songgroup}
 
-\begin{minipage}{\textwidth}
-\subsection{Strhni Ma}
-\begin{multicols*}{2}
-\begin{guitar}
+\begin{song}{Strhni Ma}{2}
 	[G]Strhni ma do svojej lásky Kráľ,
 	nech [D]nerozmýšľam, len utekám,
 	[Emi]za Tebou, len [C]za Tebou.
@@ -1484,60 +1366,421 @@
 	Ja [G]som kto som, lebo Ty si kto si.
 	ja [D]viem, kto som, lebo Ty Káľom si,
 	[Emi]nebies Kráľ, môj [C]nebies Kráľ.
-\end{guitar}
-\end{multicols*}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Radostný Kráľ}
-\begin{multicols*}{2}
-\begin{guitar}
-	/:
-	[G]Láska, ktorá nemá hraníc
-	[D]a nikdy nezakolíše sa,
-	[Emi]nikdy nezakolíše sa
-	[C]a nikdy nezíde z trónu.
+\begin{song}{Radostný Kráľ}{2}
+/:[G]Láska, ktorá nemá hraníc
+[D]a nikdy nezakolíše sa,
+[Emi]nikdy nezakolíše sa
+[C]a nikdy nezíde z trónu.
+\\
+[G]Láska, čo sa nezastaví
+[D]a nikdy nepomýli sa,
+[Emi]nikdy nepomýli sa,
+[C]Neviem k čomu prirovnám ju. 
+[G D Emi C] :/ 
+\\
+/:[G]Radostný [Hmi]Kráľ,
+sám Láskou sa naz[Emi]val.
+Oblieka mi nádej,
+[C]radosť mi nosí ako dar.:/
+\\
+[G]Uzdravuješ zrane[H7]né.
+[Emi]Obnovuješ zlome[C]né. 
+\columnbreak
+[G]Uzdravuješ zranené, 
+[H7]srdcia aj životy.
+[Emi]Obnovuješ zlomené, 
+[C]taký Kráľ si Ty.
+\\
+/:[C]Tu pred Tebou zložím jarmo,
+[Emi]ktoré si zbytočne nosím.
+[G]Tu pred tebou skloním hlavu
+[D]a vyznám Ti, že si verný.:/
+[D]a vyznám Ti, \textit{som Tvoje [C]dieťa}.
+\\
+[Emi]Stále som Tvoje [G] dieťa.
+[D]Stále som Tvoje [C]dieťa.
+[Emi]Stále som Tvoje [G]dieťa[D].
+\end{song}
+
+\begin{song}{Odvážna Láska}{2}
+	\textit{A G F\#mi G A Hmi G Emi}
+	\textit{\color{gray}Interlude:}
+	[F#mi]Tvrdosť môjho [Emi]srdca [Hmi]laa-[A]aa-a[G]m, [Emi]lám.
+	[F#mi]Tvrdosť môjho [Emi]srdca [Hmi]laa-[A]aa-a[G]m, [Emi]lám.
+	[F#mi]Tvrdosť môjho [G]srdca lám.
 	\\
-	[G]Láska, čo sa nezastaví
-	[D]a nikdy nepomýli sa,
-	[Emi]nikdy nepomýli sa,
-	[C]Neviem k čomu prirovnám ju. [G D Emi C] :/ 
+	1.[A]Pomôž mi [Hmi]prísť, chcem ťa [G]vidieť tam, 
+	kde [A]stretol si tieň, [F#mi]ako bojoval si sám.
+	[G]Spoznal si smrť, [A]odmietnuť smel.
+	No [Hmi]Otcovu [A]vôľu [G]si chcel.
+	[A]Pomôž mi [Hmi]prísť,premôž [G]so mnou strach, 
+	chcem [A]chápať tú lásku, 
+	stebou [F#mi]odvahou sa stať.
+	[G]Niesol si sám,[A]strach z mnohých rán,
+	v [Hmi]záhrade [A]zostal si [G]sám.
 	\\
-	/:[G]Radostný [Hmi]Kráľ,
-	sám Láskou sa naz[Emi]val.
-	Oblieka mi nádej,
-	[C]radosť mi nosí ako dar.:/
-	\\
-	[G]Uzdravuješ zrane[H7]né.
-	[Emi]Obnovuješ zlome[C]né. 
+	R:[D]Odvážna [A]láska, 
+	krásne meno no[Hmi]sí, Ježiš, [C]Ježiš.
+	[D]Miesto skadiaľ vychádzam, 
+	[A]miesto kam sa navrátim, [Hmi]Ježiš, [C7]Ježiš.	
+	{\color{gray}[D]Ooo, [A]Odvážna [Hmi]láska[A]. [Emi]Krásne [G]meno no[D]sí.}
 	\columnbreak
-	[G]Uzdravuješ zranené, 
-	[H7]srdcia aj životy.
-	[Emi]Obnovuješ zlomené, 
-	[C]taký Kráľ si Ty.
+	2.[A]Odváž sa [Hmi]prísť, tu ne[G]chcem byť sám,
+	[A]bdej so mnou [D]chvíľu, pochop 
+	[F#mi]to, čo prežívam.
+	[G]Bojím sa tiež,
+	[A]vzpieram sa tmám, 
+	v [Hmi]záhrade [A]zostal som [G]sám.
 	\\
-	/:[C]Tu pred Tebou zložím jarmo,
-	[Emi]ktoré si zbytočne nosím.
-	[G]Tu pred tebou skloním hlavu
-	[D]a vyznám Ti, že si verný.:/
-	[D]a vyznám Ti, \textit{som Tvoje [C]dieťa}.
+	3.[G]Ani rieky neod[Emi]plavia, 
+	veľké vody neu[Hmi]hasia lááásku,
+	trvať [A]bude večne.
+	[G]Počujem, volá na mňa [Emi]z kríža,
+	ani smrti nebo[Hmi]jí sa.
+	Nikdy ju nepochopím, 
+	[A]jej koniec nedosiahnem.
+\end{song}
+
+\begin{song}{Tu Ma Máš}{2}
+	\textit{CAPO 4}
+	[C]Keď Ti svoj život odovzdám 
+	[e]do neba zav[G]olám
+	A [D]anjeli má odprevadia 
+	[C]na cestu, ktorou mám [e] ísť,
+	ktorou kráčať [G]mám
+	[D]bez strachu a v odhodlaní.
+	/:[C]Tu ma máš pošli [e]mňa:/
 	\\
-	[Emi]Stále som Tvoje [G] dieťa.
-	[D]Stále som Tvoje [C]dieťa.
-	[Emi]Stále som Tvoje [G]dieťa[D].
-\end{guitar}
-\end{multicols*}
-\end{minipage}
+	[C]Ja Ti svoj život odovz[e]dám 
+	do neba zav[G]olám
+	[D]A anjeli ma odprevadia 
+	[C]na cestu, ktorou mám [e] ísť,
+	ktorou kráčať [G]mám
+	[D]bez strachu a v odhodlaní
+	[C]tu ma máš pošli [e]mňa
+	\\
+	[D]Tu ma máš pošli mňa
+	[C]moje srdce je ochotné.
+	\\
+	[e]Tu ma máš pošli [G]mňa
+	[D]Tu ma máš pošli mňa
+	[a]moje srdce [h]je ochotné.
+	
+	/:[e]Tu ma máš pošli mňa (3x)
+	moje srdce je ochotné.:/
+	
+	[e]V srdci mi vládneš na tróne
+	V mojom [C]srdci mi vládneš na tróne
+	S [e]mocou mi kraľuješ a vládneš 
+	preto [a]budem [h]hlásať.
+	
+	Že si [e]väčší ako som ja
+	si [C]mocnejší ako môj strach
+	Ti si [e]silnejší ako si myslím 
+	[a]za mňa sa posta[h]víš.
+	\\
+	Keď Ťa [e]význam 
+	vždy sa [C]priznáš 
+	vždy sa [e]priznáš.
+	\\
+	[e]Tu ma [G]máš 
+	[D]takého aký som 
+	[A]a s tým čo mám
+	[e]Tu ma [G]máš 
+	[D]dávam Ti svoje srdce
+	[A]načri a pokrop ma.
+\end{song}
+
+\begin{song}{Krídla orlov}{3}/:[Ami]Daruj mi krídla orlov
+	[C]daruj mi nový [G]sen
+	nový [D]sen:/ Wo[Ami]aah [C G].
+	[D]Daruj mi nový [Ami]sen. [C G D] 
+	\\
+	/:[Ami]Daruj mi krídla orlov
+	[C]daruj mi nový [G]sen.
+	Prosím, pripomeň mi
+	ž[D]e lietať dávno viem:/ 
+	Wo[Ami]aah[C G].
+	[D]Prosím, pripomeň mi,
+	že lietať dávno vi[Ami]em [C G D].
+	\\
+	Poď, pob[Ami]ežíme, pob[C]ežíme
+	u[Emi]kážem ti svoju [Hmi]tvár
+	Pob[Ami]ežíme, pob[C]ežíme
+	na všetko [Emi]staré zabú[Hmi]dam.
+	\columnbreak
+	Poď, pob[Ami]ežíme, pob[C]ežíme
+	vlejem [Emi]olej do tvojich [Hmi]rán
+	Pob[Ami]ežíme, pob[C]ežíme
+	na miesta, [Emi]kde prebý[Hmi]vam.
+	\\
+	[C]Tam, kde je láska nová
+	[Emi]kde môžeš snívať znova
+	[G]Kde môžeš snívať znov[Hmi]a
+	\\
+	[Ami]Tam, kde je láska nová
+	[Emi]kde môžeš snívať znova
+	[Hmi]Kde môžeš snívať znov[D]a
+	\columnbreak
+	Poď, pob[C]ežíme, pob[Ami]ežíme
+	u[Emi]kážem ti svoju [D]tvár
+	Pob[C]ežíme, pob[Ami]ežíme
+	na všetko [Emi]staré zabú[D]dam
+	\\
+	Poď, pob[C]ežíme, pob[Ami]ežíme
+	vlejem olej do tvojich rán
+	Pob[C]ežíme, pob[Ami]ežíme
+	na mies[Emi]ta, kde prebý[D]vam
+\end{song}
+
+\begin{song}{Milujem ťa}{2}
+	[D]Milujem ťa
+	[G]zbožňujem ť[F#]a
+	a[Hmi] ne[F#]môžem [G] žiť [A]bez te[D]ba.
+	\\
+	Si mojou [G]najväčšou túžbo[D]u
+	si mojím [Emi]najväčším šťastí[Hmi]m
+	si mojou [C]najväčšou lásko[G]u
+	[A]Jež[D]iš
+	\columnbreak
+	[D]Milujem ťa
+	[G]zbožňujem ť[F#]a
+	a[Emi] ne[F#]môžem [G] žiť [A]bez te[D]ba.
+	Ja [Emi] ne[F#]môžem [G] žiť [A]bez te[D]ba
+	\\
+	Si moj[H]ou najväčšou lásko[G]u
+	[A]Jež[D]iš.
+\end{song}
+
+\begin{song}{Tma Sa Trasie}{2}
+	\textit{\color{gray}CAPO 2}
+	/:[G]Ježiš, ty si kráľ
+	sv[Hmi]oje srdce dnes oddám
+	väčšiu[G] lásku nep[D]oznám
+	[G]Tvoja láska láme ma
+	tvoj[Hmi]a moc ma premieňa
+	Ježiš,[G] môjho srdca [D]kráľ:/
+	\\
+	/:[G]Tvoje meno svieti v tmách
+	v tebe[Hmi] končí každý strach
+	s te[G]bou nemusím[D] sa báť
+	Tvo[G]je meno vyslovím
+	tvojou[Hmi] slávou zažiarim
+	s tebo[G]u nebudem s[D]a báť:/
+	\columnbreak
+	\textit{\color{gray}Chorus: 4x}
+	Lebo tma s[G]a trasie[Emi], woah
+	pred menom [Hmi]Ježiš, w[A]oah
+	\\
+	\textit{\color{gray}Bridge 2x}
+	[A]Láka ma uvidieť ten ja[Hmi]s z výsosti
+	[G] ako sa stráca tieň a z[D]lo temnosti
+	[A]S túžbou hľadám tvár, 
+	viem, ž[Hmi]e slnko vyjde zas.
+	[G]k nebu sa obrátim, nec[D]hám sa uchvátiť
+	\\
+	\textit{\color{gray}Bridge2: 2x}
+	V[G]tom nebo zahučí, b[Hmi]lesk moci zažiari
+	[D] a v ňom sa zjaví [A]sám Kráľ slávy
+	Pluk tvojich anjelo[Hmi]v tmu noci rozvráti
+	láska víťazí, srdce[A] rozpáli
+\end{song}
+
+\begin{song}{Mária Magdaléna}{2}
+	\textit{\color{gray} CAPO 2}
+	\textit{\color{gray} 1: 4x}
+	Túžim sa [D]skloniť na zem k tvojim nohám
+	[Hmi]zmáčať ich slzami a poutierať vlasmi
+	[G]Skloniť na zem k tvojim nohám
+	nechám sa [A]utíšiť tvojimi slovami
+	\\
+	\textit{\color{gray} Chorus: 4x}
+	Ó, J[D]ežiš
+	Môj J[Hmi]ežiš
+	J[G]ežiš, J[A]ežiš
+	\\
+	\textit{\color{gray} 2:}
+	[D]Keď som ťa uvidel, hneď som sa zamiloval
+	[Hmi]tvoj hriech do prachu vryl a viac ho nespomí[G]nal
+	dal som ti nové meno, iným ťa nezavo[A]lám
+	[D]Nikdy ťa neopustím, veď ty si môj svätý chrám
+	[Hmi]to, čo som prisľúbil, už nikdy neodvo[G]lám
+	tak povedz mi, čo chceš a dám ti všetko, čo [A]mám
+	\columnbreak
+	\textit{\color{gray} Chorus: 4x}
+	\\
+	\textit{\color{gray} 3: 2x}
+	[D]Dotkni sa môjho hriechu, ja budem belší ako sneh
+	[Hmi]dotkni sa mojej biedy a bolesť zmení sa v sm[G]iech
+	dáš radosť namiesto smútku a veniec miesto popo[A]la
+	[D]ja vstávam, ja vstávam, ja vstávam
+	([Hmi]z prachu povstáva krása, z prachu povstáva krá[G]sa)
+	\\
+	\textit{\color{gray} 4: 2x}
+	[D]Dotkol sa môjho hriechu a ja som belší ako sneh
+	[Hmi]Dotkol sa mojej biedy a bolesť mení sa v s[G]miech
+	Dal radosť namiesto smútku a veniec miesto popo[A]la
+	[D]z prachu povstáva krása, z prachu povstáva krása
+\end{song}
+
+\begin{song}{Pokoj}{2}
+\textit{\color{gray}Verse1:}
+/:[H]Môj Boh je moje útočište
+[C#mi]a moja skrýša v čase [G#mi]súženia.
+/:[E]V tôni svojich krídel ma scho[H]váá[C#mi G#mi]:/
+[E F#].
+
+\textit{\color{gray}Chorus 2x}
+[H]Môj Boh je na mojej strane
+[C#mi]už od úsvitu mi po[E]máha.
+Budúcnosť a nádej pre mňa [H]má[C#mi G#mi E].
+\columnbreak
+\textit{\color{gray}Bridge 2x}
+[H]Tvoj Pokoj [E]prevýšil moje chápanie
+[G#mi]Si mojou istotou [E]Počuješ moje volanie 
+
+[H]Si so mnou [E]Aký mocný si vo mne
+[G#mi]Stále ma nesie [E]Tvoja milosť a Tvoje žehnanie[B]
+
+\textit{\color{gray}Verse1:}
+[C#mi]Aký mocný si vo mne [G#mi]
+/:[E]V tôni svojich krídel ma scho[H]váá[C#mi G#mi].
+[E]Budúcnosť a nádej pre mňa [H]má[C#mi G#mi E].:/
+\end{song}
+
+\begin{song}{Oceány}{2}
+\textit{\color{gray}CAPO 1}
+[Dmi]Pozývaš ma [C]do nezná[F]ma
+pre[C]chádzať sa po [G]vodách
+[Dmi]Tam ťa nájdem [C]napriek [F]búrkam
+zvlá[C]dnem stáť na [G]hlbinách
+
+
+[C]Na Teba [G]Ježiš zavo[F]lám
+[C]ku Tebe svoj [G]zrak upie[F]ram
+[C]len Tvoja [G]náruč pokoj [F]dá
+Tvoja [G]som a [C]Ty si [Dmi]môj[C],[F],[C],[G]
+
+
+Milosťou ma chrániš v búrkach
+s istotou ma sprevádzaš
+Napriek môjmu strachu z pádov
+viesť ma smieš, Ty nezlyháš
+
+
+Zaveď ma na miesta
+bezhraničnej viery
+chcem kráčať nad vodami
+tam kam ma zavoláš
+
+Vezmi hlbšie, než sa
+odvažujem prosiť
+len v Tvojej prítomnosti
+moja viera narastá
+\end{song}
+
+\newpage
+%%%%%%%%%%%%%% PIAR MUSIC
+\section{PiarMusic}
+
+
+\begin{song}{Milosťou žijem}{3}
+	S[F]trhol ma do tanca
+	s[Ami]rdcom na srdce
+	T[Dmi]ajomstvom bláznovstva
+	[B]láskou ma [C]omámil
+	\\
+	Milosťou žijem
+	nech robí vo mne
+	čo sa jej zapáči
+	čo sa jej zachce
+	\columnbreak
+	Vodí ma do záhrad
+	stúpame do kopca
+	Vodu mi podáva
+	čo tečie z jeho rán
+	\\
+	A čím viac pijem z nej
+	tým viac smädí ma
+	Tá voda živá je
+	srdce mi obmýva
+	\columnbreak
+	Až [Dmi]do dôsledkov
+	krva[Ami]vých stôp
+	[B]Víťaznou vierou
+	[C]a Božou mocou
+	\\
+	Až [Gmi]do dôsledkov
+	krva[F]vých stôp
+	[Dmi]Víťaznou vierou
+	[C]a Božou mocou
+\end{song}
+
+\begin{song}{Môj Abba}{3}
+\textit{\color{gray} 1: 2x}
+[Ami]Pre teba stanem sa bláznom
+[C]ako vietor sem a tam poletím
+[Emi7]Ježiš, len za tvojim [D]hlasom
+[Ami]A ako dieťa budem [C]veriť
+tvojim slovám, že si [Emi7]dobrý,
+si dobrý [D]Kráľ
+\\
+\textit{\color{gray} Chorus: 2x}
+[Ami] Že sa postaráš o mňa,
+[C]ja nemusím sa báť.
+[Emi7]Môj život [D]vo svojich rukách máš
+[Ami]Ty sa postaráš o [C]mňa
+ja nemusím sa [Emi7]báť.
+Môj život [D]vo svojich rukách [Ami]máš
+
+Vpísaný,[C] [Emi7]môj Abba[Hmi]
+Ja Ti [Ami]verím, óó ja Ti [C]verím
+môj [Emi7] Abba [D]Abba
+\\
+\textit{\color{gray} Bridge1: 2x}
+[C]Stvor vo mne srdce čisté,
+[Emi7]srdce pokorné a tiché[G],
+také aké [D]Tvoje je
+\\
+\textit{\color{gray} Bridge2: 4x}
+[C]Vezmi ma k sebe bližšie,
+[Emi7]ukáž mi, Otec [G]aký si
+chcem [D]konať to, čo vidím robiť teba
+\\
+\textit{\color{gray} Bridge3: 2x}
+[C] Sa [Emi7]vzdávam a [G]dávam sa [D]Ti
+\end{song}
+
+\begin{song}{Taký, aký som}{2}
+\textit{\color{gray} CAPO 1}
+D[Em]víham ruky aj keď k ze[C]mi padám
+dnes túžim vz[G]dať Ti chválu,
+nechať všetko, [D]prísť k tebe Kráľ
+\\
+[Em]A hľadám Teba aj keď s[C]eba strácam,
+na všetko č[G]o je za mnou zabúdam
+za t[D]ebou utekám.
+\columnbreak
+[Em]Taký aký som, 
+[C]nahý pred tebou,
+[G]nechám sa premeniť, 
+[D]nechám sa láskou zlomiť.
+\\
+[Em]Vzdávam sa svojich predstáv,
+[C]Vzdávam sa svojich snov,
+Ž[G]iaden strach a žiaden vzdor. 
+C[D]elý som tvoj
+\end{song}
 
 
 \newpage
 %%%%%%%%%%%%%% RICHARD CANAKY
 
-\begin{minipage}{\textwidth}
 \section{Richard Čanaky}
-\subsection{Aj keď málo mám síl}
-\begin{multicols*}{3}
-\begin{guitar}
+
+\begin{song}{Aj keď málo mám síl}{3}
 	[C] Aj keď málo mám síl 
 	a [G] cítim sa sám,
 	keď [Ami] padám do hriechov, 
@@ -1564,26 +1807,11 @@
 	keď blúdim v tmách,
 	buď mi priateľom, 
 	chcem počuť Tvoj hlas,
-	chcem počuť Tvoj hlas.	
-\end{guitar}
-\end{multicols*}
-\end{minipage}
+	chcem počuť Tvoj hlas.
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Obeta srdca (Túžim priniesť na oltár)}
-\begin{multicols*}{3}
-\begin{guitar}
-	1.[D]Túžim priniesť na ol[G]tár, 
-	život č[A]o v sebe [D]mám,
-	tvojou láskou zlome[G]ný, 
-	chcem ťa [A]chváliť môj [D]Pán.
-	Chcem ti vydať práve [G]dnes, 
-	každú č[A]asť života[Hmi],
-	viem, že prijmeš každý [G]dar, 
-	zlome[A]ného srdca[D].
-	\columnbreak
-	R:
-	Povedz čo ti smiem [G]dať, 
+\begin{song}{Obeta srdca (Túžim priniesť na oltár)}{3}
+	R:Povedz čo ti smiem [G]dať, 
 	čo p[A]riniesť ti [D]smiem?
 	Si môj láskavý Kráľ[G], 
 	ja len [A]miznúci tieň[D].
@@ -1594,7 +1822,16 @@
 	Možno len tichý plač, 
 	[Emi]len [D]bolesť čo mám[G],
 	svoju [Emi]hĺbku [D]srdca ti dám[G], 
-	môj [A]láskavý [D]Pán.
+	môj [A]láskavý [D]Pán.	
+	\columnbreak
+	1.[D]Túžim priniesť na ol[G]tár, 
+	život č[A]o v sebe [D]mám,
+	tvojou láskou zlome[G]ný, 
+	chcem ťa [A]chváliť môj [D]Pán.
+	Chcem ti vydať práve [G]dnes, 
+	každú č[A]asť života[Hmi],
+	viem, že prijmeš každý [G]dar, 
+	zlome[A]ného srdca[D].
 	\columnbreak
 	2.[D]Kvôli tebe dýchať [G]smiem, 
 	môj dlh [A]splatil si [D]sám
@@ -1604,59 +1841,34 @@
 	bol to [A]posledný boj[Hmi], 
 	otvoril si bránu ne[G]bies, 
 	dnes [A]som iba tvoj[D].
-\end{guitar}
-\end{multicols*}
-\end{minipage}
-
-\begin{minipage}{\textwidth}
-\subsection{Jedine s láskou}
-\begin{guitar}
+\end{song}
+	
+\begin{song}{Jedine s láskou}{2}
 	\textit{CAPO 2}
 	1.
 	[G]Keby mi hlas ako anjela znel, [D]keby som bol prorok veľkých diel,
 	[E]keby som aj hory prenášal, [C]bez lásky by som [D]ostal sám.
-	
-	2.
-	[G]Keby som bol múdry ako kráľ, [D]majetok svoj celý rozdával,
+	\\
+	2.[G]Keby som bol múdry ako kráľ, [D]majetok svoj celý rozdával,
 	[E]keby som vo svete slávnym bol, [C]bez lásky som iba [D]prázdny kov.
-	
-	3.
-	[G]Keby som v modlitbách stále stál, [D]keby som nad hlavou žiaru mal,
+	\\
+	3.[G]Keby som v modlitbách stále stál, [D]keby som nad hlavou žiaru mal,
 	[E]keby som každý deň v chráme bol, [C]bez lásky som iba /: [D]plný slov :/ (4x)
-	
-	
+	\columnbreak
 	Ref.
 	/:[G]Jedine [D]s láskou, [E]jedine [C]s láskou,
 	[G]jedine [D]Ježiš Ti [E]dáva, dáva, [C]dáva, [D]lásku, tak [G]poď.:/ 
-	
-	4.
-	[G]Keby som mal v sebe veľa snov, [D]keby som nakŕmil žobrákov,
+	\\
+	4.[G]Keby som mal v sebe veľa snov, [D]keby som nakŕmil žobrákov,
 	[E]keby som celé dni vyhrával, [C]bez lásky je to [D]smiešny bál.
-	
-	5.
-	[G]Keby som zázraky robiť smel, [D]keby som neurobil žiadny hriech,
+	\\
+	5.[G]Keby som zázraky robiť smel, [D]keby som neurobil žiadny hriech,
 	[E]keby som na tvári úsmev mal, [C]bez lásky som iba  /: [D]smiešny klaun :/ (4x)
 	
 	Ref.
-\end{guitar}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Vznešený}
-\begin{guitar}	
-	[D]Vznešený tak jemný[G]
-	Iba [A]Ty vieš ku nám [D]byť
-	Zranení, zlomení[G]
-	Bez obáv[A] môžeme [Hmi]prísť
-	Ty [A]stále č[G]akáš. [Hmi]Novú [A]nádej nám [G]dáš
-	[Hmi]Ty [A]odnímaš [G]hriech. [Hmi]V tichu [A]modlitba [G]znie
-\end{guitar}
-\end{minipage}
-
-\begin{minipage}{\textwidth}
-\subsection{Ty ma nesieš sám}
-\begin{multicols*}{2}
-\begin{guitar}	
+\begin{song}{Ty ma nesieš sám}{2}
 	[G]Ty ma nesieš [C]sám, Tebe [D]veriť s[G]miem.
 	Ty mi pomá[C]haš, keď ma [D]láka [Emi]hriech.
 	Ty sa [D]dotýkaš [C]hviezd, aj detských [G]sĺz.
@@ -1676,18 +1888,24 @@
 	aby Tvoj Duch prúdil [D]mnou
 	aby uzdravený [Emi]bol,
 	kto sa [D]skloní pred Te[C]bou!
-\end{guitar}
-\end{multicols*}
-\end{minipage}
+\end{song}
+
+\begin{song}{Vznešený}{2}
+	[D]Vznešený tak jemný[G]
+	Iba [A]Ty vieš ku nám [D]byť
+	Zranení, zlomení[G]
+	Bez obáv[A] môžeme [Hmi]prísť
+	Ty [A]stále č[G]akáš. [Hmi]Novú [A]nádej nám [G]dáš
+	[Hmi]Ty [A]odnímaš [G]hriech. [Hmi]V tichu [A]modlitba [G]znie
+	\columnbreak
+\end{song}
 
 \newpage
 %%%%%%%%%%%%%% TIMOTHY
 
-\begin{minipage}{\textwidth}
 \section{Timothy}
-\subsection{Prišli sme ťa vzývať}
-\begin{multicols*}{2}
-\begin{guitar}	
+
+\begin{song}{Prišli sme ťa vzývať}{2}
 	1.[D]Do tmy na[A] svet 
 	prišlo [G]k nám svetlo sveta.
 	[D]Otvor môj[A] zrak nech vi[G]dím
@@ -1707,14 +1925,9 @@
 	dokonale[Hmi] nádherný ku[G] nám.
 	/:Ja [A]nemám [D]dosť slov [G]opísať 
 	cen[A]u, kto[D]rú Ťa [G]môj hriech stál:/
-\end{guitar}
-\end{multicols*}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Nohy jeleníc}
-\begin{multicols}{2}
-\begin{guitar}	
+\begin{song}{Nohy jeleníc}{2}
 	[C]Ty mi dávaš [G]nohy jeleníc
 	[Ami]s tebou naberiem [F]denne nových síl.
 	[C]S tebou preskočím [G]aj múry trápenia,
@@ -1724,88 +1937,84 @@
 	a hymnu slobody mi do úst položíš,
 	nikto už nevezme čo si mi zasľúbil
 	zo žalmom na perách zaspávaš v pokoji
-\end{guitar}
-\end{multicols}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Božia láska príd}
-\begin{guitar}
+\begin{song}{Božia láska príď}{2}
 	\textit{CAPO 2}
 	[C]Božia [F]láska [C]príď, ako [F]mocný [G]oceán .
 	\\
 	/: [Emi]Prúď cez [Ami]nás [Emi]svojou [Ami]milosťou, 
 	Božia [Dmi]lásk[F]a p[G]ríď k [C]nám :/
-\end{guitar}
-\end{minipage}
+	\columnbreak
+\end{song}
+
+\begin{song}{Tvoja láska dvíha ma}{2}
+Tvoja [F]láska dvíha ma [C], keď k Tebe [Ami]volám, si pri mne [G]blízko.
+Tvoj [F]duch napĺňa ma [C], po Tvojich [Ami]cestách ma vedie [G]isto.
+
+Tvoj [F]dotyk premieňa ma [C], 
+na moje [Ami]rúno rosa [G]padá.
+\columnbreak
+(Medzihra F, C, Ami, G)
+
+Dnes [C]viem, že [G]Ty zostaneš [F]verný až na ve [G]ky,
+už [C]nie som zem bez vo [G]dy, vytryskla [F]voda zo ska [G(C)]ly.
+
+Si [C]nekonečný, [G]jedinečný, [Ami]stále nový, ako [F]skala pevný. [C]Pán
+\end{song}
 
 \newpage
 %%%%%%%%%%%%%% K DUCHU SVATEMU
 \section{K Duchu Svätému}
 
-\begin{multicols}{2}
-\begin{minipage}{\textwidth}
-\subsection{Duchu Svätý príď}
-\begin{guitar}
-	/:[D]Duchu [A]Svätý p[G]ríď,
-	D[D]uchu [G]Svätý [A]príď:/
-	\\
-	/:Nech [G]zavládne v[D]iera,
-	nech z[G]avládne [D]nádej,
-	nech z[G]avládne lá[D]ska v [A]nás:/
-\end{guitar}
-\end{minipage}
+\begin{songgroup}{2}
+	\begin{groupitem}{Duchu Svätý príď}
+		/:[D]Duchu [A]Svätý p[G]ríď,
+		D[D]uchu [G]Svätý [A]príď:/
+		\\
+		/:Nech [G]zavládne v[D]iera,
+		nech z[G]avládne [D]nádej,
+		nech z[G]avládne lá[D]ska v [A]nás:/
+	\end{groupitem}
+	\columnbreak
+	\begin{groupitem}{Ty si najvyšší, Ty si Pán}
+		/:[C]Ty si najvyšší, [Ami]Ty si Pán,
+		[F]to, čo mám, Tebe [G]ponúkam.:/
+		/:[C]Obnov ma svojím [Ami]Duchom Svätým,
+		[F]nech ako Ty [G]stále svietim.:/
+	\end{groupitem}
+\end{songgroup}
 
-\begin{minipage}{\textwidth}
-\subsection{Ty si najvyšší, Ty si Pán}
-\begin{guitar}
-	/:[C]Ty si najvyšší, [Ami]Ty si Pán,
-	[F]to, čo mám, Tebe [G]ponúkam.:/
-	/:[C]Obnov ma svojím [Ami]Duchom Svätým,
-	[F]nech ako Ty [G]stále svietim.:/
-\end{guitar}
-\end{minipage}
-\end{multicols}
+\begin{songgroup}{2}
+	\begin{groupitem}{Nech Tvoj Duch preteká}
+		Nech Tvoj Duch [E]preteká ako rieka [C#mi]mohutná,
+		nech Tvoj Duch [A]preteká [F#mi]ako rieka [H]mohutná.
+		A rany [E]uzdraví ako rieka [C#mi]mohutná,
+		a rany [A]uzdraví [F#mi]ako rieka [H]mohutná.
+		A bolesť [E]odplaví ako rieka [C#mi]mohutná,
+		a bolesť [A]odplaví [F#mi]ako rieka [H]mohutná.
+		Pokojom [E]naplní ako rieka [C#mi]mohutná,
+		pokojom [A]naplní [F#mi]ako rieka [H]mohutná.
+		Nech zaznie [E]hymna chvál ako rieka 
+		[C#mi]mohutná,
+		nech zaznie [A]hymna chvál [F#mi]ako rieka 
+		[H]mohutná.
+	\end{groupitem}
+	\columnbreak
+	\begin{groupitem}{Teraz vchádzaš, Pane}
+		Teraz [F]vchádzaš, Pane
+		[C]cez zavreté [Ami]brány
+		[Dmi]rany [C]oslá[B]vené
+		[A]Ježiš, [B]víťaz [C]slávny
+		\\
+		Ty zo[F]stávaš s nami
+		[C]zošli svojho [Ami]Ducha
+		[Dmi]uzdrav [C]moje [B]srdce
+		[A]daj, nech [B]Tebou [C]dý[Dmi]cha
+	\end{groupitem}
+\end{songgroup}
 
-
-\begin{minipage}{\textwidth}
-\begin{multicols*}{2}
-\subsection{Nech Tvoj Duch preteká}
-\begin{guitar}
-	Nech Tvoj Duch [C]preteká ako rieka [Ami]mohutná,
-	nech Tvoj Duch [F]preteká ako rieka [G]mohutná.
-	A rany [C]uzdraví ako rieka [Ami]mohutná,
-	a rany [F]uzdraví ako rieka [G]mohutná.
-	A bolesť [C]odplaví ako rieka [Ami]mohutná,
-	a bolesť [F]odplaví ako rieka [G]mohutná.
-	Pokojom [C]naplní ako rieka [Ami]mohutná,
-	pokojom [F]naplní ako rieka [G]mohutná.
-	Nech zaznie [C]hymna chvál ako rieka 
-	[Ami]mohutná,
-	nech zaznie [F]hymna chvál ako rieka 
-	[G]mohutná.
-\end{guitar}
-\columnbreak
-\subsection{Teraz vchádzaš, Pane}
-\begin{guitar}
-	\textit{CAPO 3}
-	Teraz [D]vchádzaš, Pane
-	[A]cez zavreté [F#7]brány
-	[Hmi]rany [A]oslá[G]vené
-	[F#]Ježiš, [G]víťaz [A]slávny
-	\\
-	Ty zo[D]stávaš s nami
-	[A]zošli svojho [F#7]Ducha
-	[Hmi]uzdrav [A]moje [G]srdce
-	[F#]daj, nech [G]Tebou [A]dý[h]cha
-\end{guitar}
-\end{multicols*}
-\end{minipage}
-
-\begin{minipage}{\textwidth}
-\subsection{Duchu svätý, si tu vítaný}
-\begin{multicols*}{3}
-\begin{guitar}	
+\begin{song}{Duchu svätý, si tu vítaný}{3}
 	[D]Nič ma neláka viac
 	ako bližšie [G]stáť
 	Nič sa nevyrovná
@@ -1831,65 +2040,63 @@
 	bázeň mám
 	[G]Dnes túžim zažívať,
 	aký [Em]dobrý Boh si k nám
-\end{guitar}
-\end{multicols*}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Jak jeleň dychtí za vodou}
-\begin{guitar}
-	
-	R: /:[Emi]Jak [C]jeleň [D]dychtí za vo[Emi]dou
-	ja[C] Bože [D]túžim za Te[Emi]bou:/
+\begin{songgroup}{2}
+	\begin{groupitem}{Jak jeleň dychtí za vodou}	
+		R: /:[Emi]Jak [C]jeleň [D]dychtí za vo[Emi]dou
+		ja[C] Bože [D]túžim za Te[Emi]bou:/
+		\\
+		Zošli[Emi]dážď, zošli[C] dážď, dosť[G] bolo su[D]cha.
+		Zošli dážď, zošli dážď, Svätého Ducha.
+		Zošli dážď, zošli dážď, nové Turíce.
+		Zošli dážď, zošli dážď, rozjasaj srdce.
+	\end{groupitem}
+	\columnbreak
+	\begin{groupitem}{Naplň ma Duchom svojím}
+		[C]Naplň ma Duchom svo[Ami]jím, 
+		[Dmi]naplň ma Duchom svo[G]jím,
+		nechcem byť [C]prázd[E]ny [Ami]džbán, 
+		plň ma Ty [F]Páá-ne [G]sám.
+		\\
+		[Ami]Naplň ma Duchom svo[Emi]jím, 
+		[F]naplň ma Duchom svo[G]jím,
+		[C]prosím Ťa [Ami]naplň ma 
+		[Dmi]nech Duchom [G]prete[C]kám. F C G
+	\end{groupitem}
+\end{songgroup}
+
+\begin{song}{Príď už, príď, Duchu Stvoriteľu}{2}
+	1.[G]Príď už, [D]príď, Duchu [Emi]Stvori[C]teľu, [G]Duchu [D]zmiere[G]nia[D].
+	[G]Príď už[D] a premeň ľ[Emi]udstvo [C]celé [G]v nové [D]stvore[G]nia[D].
 	\\
-	Zošli[Emi]dážď, zošli[C] dážď, dosť[G] bolo su[D]cha.
-	Zošli dážď, zošli dážď, Svätého Ducha.
-	Zošli dážď, zošli dážď, nové Turíce.
-	Zošli dážď, zošli dážď, rozjasaj srdce.
-\end{guitar}
-\end{minipage}	
-
-
-\begin{minipage}{\textwidth}
-	\subsection{Príď už, príď, Duchu Stvoriteľu}
-	\begin{guitar}
-		1.[G]Príď už, [D]príď, Duchu [Emi]Stvori[C]teľu, [G]Duchu [D]zmiere[G]nia[D].
-		[G]Príď už[D] a premeň ľ[Emi]udstvo [C]celé [G]v nové [D]stvore[G]nia[D].
-		\\
-		R: [G]Duchu [D]Svätý, [Emi]svojou [Hmi]hmocou [C]v láske [D]obnov [G]nás[D],
-		[G]nene[D]chaj nás [Emi]kráčať [Hmi]nocou, [C]osvieť [D]rozum [G]náš[D].
-		\\
-		2. [G]Prebuď [D]nás svojím [Emi]Duchom [C]Svätým, [G]zažeň [D] temno[G]tu[D].
-		[G]Navráť [D]zblúdilých, [Emi]prebuď [C]hluchých, [G] žehnaj [D] živo[G]tu[D].
-		\\
-		3. [G]Prebuď [D]svedomie [Emi]otupe[C]ných, [G]zbližuj [D]náro[G]dy[D].
-		[G]Zavej [D]a priveď [Emi]zotroče[C]ných [G]v ríšu [D]slobo[G]dy[D].
-	\end{guitar}
-\end{minipage}
-
-\begin{minipage}{\textwidth}
-\subsection{Naplň ma Duchom svojím}
-\begin{guitar}
-	[C]Naplň ma Duchom svo[Ami]jím, [Dmi]naplň ma Duchom svo[G]jím,
-	nechcem byť [C]prázd[E]ny [Ami]džbán, plň ma Ty [F]Páá-ne [G]sám.
-	[Ami]Naplň ma Duchom svo[Emi]jím, [F]naplň ma Duchom svo[G]jím,
-	[C]prosím Ťa [Ami]naplň ma [Dmi]nech Duchom [G]prete[C]kám. F C G
-\end{guitar}
-\end{minipage}
-
+	R: [G]Duchu [D]Svätý, [Emi]svojou [Hmi]hmocou [C]v láske [D]obnov [G]nás[D],
+	[G]nene[D]chaj nás [Emi]kráčať [Hmi]nocou, [C]osvieť [D]rozum [G]náš[D].
+	\\
+	2. [G]Prebuď [D]nás svojím [Emi]Duchom [C]Svätým, [G]zažeň [D] temno[G]tu[D].
+	[G]Navráť [D]zblúdilých, [Emi]prebuď [C]hluchých, [G] žehnaj [D] živo[G]tu[D].
+	\\
+	3. [G]Prebuď [D]svedomie [Emi]otupe[C]ných, [G]zbližuj [D]náro[G]dy[D].
+	[G]Zavej [D]a priveď [Emi]zotroče[C]ných [G]v ríšu [D]slobo[G]dy[D].
+	\columnbreak
+\end{song}
 
 %%%%%%%%%%%%%% MARIANSKE
+\newpage
 \section{Mariánske}
 
-\begin{minipage}{\textwidth}
-\subsection{Hymna ZMM }
-\begin{guitar}
+\begin{song}{Hymna ZMM}{2}
 	\textit{CAPO 1}\\
-	[G]Tam kde Matka skláňa[H] hlavunad[C] dieťaťom s[G]vojím.
+	1.[G]Tam kde Matka skláňa[H] hlavu nad[C] dieťaťom s[G]vojím.
 	T[A]am kde láska [C]vladne nad všet[D]kým.
 	Tam sa [G]ponahľajme s[H]polu, a[C]ko jeden[G] tým
 	[A]rozdať svetlo [C]lásky ostat[D]ným.
 	\\
+	2.[G]Keď sa blížia ťažke [H]skúšky a [C]zmocní sa nás [G]strach.
+	K[A]eď si myslim že [C]všetko nechám t[D]ak.
+	Tvoja [G]medaiľa nás [H]chráni a [C]dáva silu [G]vstať.
+	P[A]od ochranou [C]Tvojou chceme [D]stáť.
+	\columnbreak
 	Ro[H]zhodné á[E]no Ty stá[C]le vravíš [D]nám.
 	N[H]ech vo svetle[E] lúčov spoz[C]náme Boží [D]plán.
 	\\
@@ -1899,18 +2106,9 @@
 	My sme m[G]ládež čo [D]znáša 
 	aj n[E]astrahy z[C]lých.
 	Má[A]ria nas dvíha v nár[D]učí.
-	\\
-	[G]Keď sa blížia ťažke [H]skúšky a [C]zmocní sa nás [G]strach.
-	K[A]eď si myslim že [C]všetko nechám t[D]ak.
-	Tvoja [G]medaiľa nás [H]chráni a [C]dáva silu [G]vstať.
-	P[A]od ochranou [C]Tvojou chceme [D]stáť.
-\end{guitar}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Máš v duši pieseň}
-\begin{multicols}{2}
-\begin{guitar}	
+\begin{song}{Máš v duši pieseň}{2}
 	1. [Emi]Máš v duši pieseň [C]anjelských zborov,
 	[D]máš v duši bolesť [C]tých najkrajších [D]tónov.
 	[Emi]Máš v sebe silu, ľ[C]udia po nej túžia,
@@ -1930,24 +2128,9 @@
 	Ref. 
 	/: [Emi]Mária, s Tebou [C]Mária,
 	[D]kráľovstvo lásky sa [G]otvá[D]ra. :/
-\end{guitar}
-\end{multicols}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Magnificat}
-\begin{guitar}	
-	[G]Magnifi[C]cat, [D]magnifi[G]cat,
-	[G]magnifi[C]cat anima [D]mea [G]Dominum,
-	[G]Magnifi[C]cat, [D]magnifi[G]cat,
-	[G]magnifi[C]cat anima [D]me[G]a.
-\end{guitar}
-\end{minipage}
-
-\begin{minipage}{\textwidth}
-\subsection{Mária, Matka bolestná}
-\begin{multicols}{2}
-\begin{guitar}	
+\begin{song}{Mária, Matka bolestná}{2}
 	1. [Ami]Mária, [G]Matka bolest[C]ná, 
 	[Dmi]ty nás [G]láske [C]učíš,
 	[Dmi]pod krížom [G]stojíš žalo[C]st[Ami]ná, 
@@ -1967,22 +2150,64 @@
 	[Dmi]ty dáš [G]nádej [C]mnohým,
 	[Dmi]ktorí chcú [G]Krista v tichu [C]ná[Ami]jsť, 
 	[Dmi]si im vzorom [E]veľkým.
-\end{guitar}
-\end{multicols}
-\end{minipage}
+\end{song}
 
+\begin{song}{Magnificat}{2}
+	[G]Magnifi[C]cat, [D]magnifi[G]cat,
+	[G]magnifi[C]cat anima [D]mea [G]Dominum,
+	[G]Magnifi[C]cat, [D]magnifi[G]cat,
+	[G]magnifi[C]cat anima [D]me[G]a.
+	\columnbreak
+\end{song}
+
+
+\begin{song}{Rozhára Maria sviece v nás}{2}
+	R:Rozhá[C]ra [G]Mária [Dm]sviece v [Am]nás.
+	Temno[C]tu [G]s Máriou [Dm]poráž[Am]aš.
+	Rozhá[F]ra [Dm]Mária [C]sviece v [G]nás.
+	Temno[C]tu [G]s Máriou [F]poráž[C]aš.
+	
+	1. To vďaka [Am]nej dal, mužom [F]mŕtvym ž[Dm]ivot Boží [C]Syn,
+	A [Am]svetlo vošlo [F]do miest, kde [Em]dlho ležal [G]tieň.
+	
+	\columnbreak
+	2.To vďaka[Am]nej, znovu sa k [F]Zemi [Dmi]nebo prik[C]láňa,
+	a [Am]padla vláda [F]noci, keď [Em]prišlo svita[G]nie.
+	
+	3.To vďaka[Am]nej, nás Kristov [F]oheň ne[Dmi]necháva sp[C]ať,
+	že [Am]roztápa ľ[F]ady a v [Em]teplo mení [G]chlad.
+	
+	Outro:
+	Jej patrí [Am]chvála, že plášťom [F]svojím [Dmi]chráni národ [C]náš,
+	keď [Am]Slovensko Ťa [F]prosí, Ty [Em]stále naslú[G]chaš.
+\end{song}
+
+
+\begin{song}{Celý som Tvoj (Totus Tus)}{2}
+	[D]Nepoškvrnené Srdce Már[Hmi]ie,
+	dôvery [Emi]plný prichádzam k te[A]be.
+	Túžim ti [F#mi]svoje malé srdce [G]dať
+	so všetkým, č[Emi]o v ňom je,
+	z lásky daro[A]vať.
+	
+	/: [G]Celý som [A]tvoj, [F#]celý som [Hmi]tvoj,
+	[G]celý som [Hmi]tvoj, Matka,[Emi]teraz i nave[A]ky. :/
+	\columnbreak
+	[D]Nepoznám väčšiu lásku na sve[Hmi]te,
+	než tú, čo v [Emi]srdci matkinom tle[A]je.
+	No ani tá [F#mi]sa porovnať ne[G]dá s tou,
+	ktorú [Emi]Mária ku každej duši [A]má.
+\end{song}
 
 %%%%%%%%%%%%%% SIMA MARTAUSOVÁ
+\newpage
 \section{Sima Martausová}
 
-\begin{minipage}{\textwidth}
-\subsection{Krížová cesta}
-\textit{CAPO 4}
-\begin{multicols}{2}
-\begin{guitar}
+\begin{song}{Krížová cesta}{3}
+	\textit{CAPO 4}
 	[Ami, Emi, Ami, Emi, Dm, Ami, E]
 	
-	[Ami]Prechádzaš s krížom [Emi]krvavým
+	1.[Ami]Prechádzaš s krížom [Emi]krvavým
 	[Ami]Dúfaš, že sa [Emi]zastavím
 	[Dmi]A utriem Ti krv [Ami]bielou šatkou-čo mám
 	[E]Si plný rán.
@@ -1991,38 +2216,28 @@
 	[Ami]Mojou pýchou [Emi]korunovaný
 	[Dmi]A bolí Ťa to, [Ami]keď sa smeje Ti dav
 	[E] Židovský Kráľ.
-	\\
+	\columnbreak
 	R: [Ami]Viem, že ja [G]tvoja šiesta rana [C]som
 	[E]Každou hádkou [Ami]s priateľom
 	[G]Každým hriechom, [C]ktorý mám
 	[E] Ťa pribíjam
 	[Ami]Viem, že ja [G] Ťa predávam jak Judáš
 	[C]A Ty mi odpúšťaš [E]Mesiáš.
-	\columnbreak
 	[Ami, Emi, Ami, Emi, Dm, Ami, E]
-	
-	[Ami]Prechádzaš s krížom [Emi]v objatí
+	\columnbreak
+	2.[Ami]Prechádzaš s krížom [Emi]v objatí
 	[Ami]Dúfaš, že sa [Emi]nestratím
 	[Dmi]A budem s Tebou [Ami]ako Šimon niesť
 	[E]Tvoju bolesť
-	
-	R: ...
 	\\
-	[Ami, Emi, Ami, Emi, Dm, Ami, E]
-	
-	[Ami]Prechádzaš s krížom [Emi]krvavým
+	3.[Ami]Prechádzaš s krížom [Emi]krvavým
 	[Ami]Pri mne si sa [Emi]zastavil
 	[Dmi]A Tvoje telo, [Ami]celé tŕňové
 	[E]Buduje všetko nové...
-\end{guitar}
-\end{multicols}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Baránok}
-\textit{CAPO 1}
-\begin{multicols}{2}
-\begin{guitar}
+\begin{song}{Baránok}{3}
+	\textit{CAPO 1}
 	[Intro: C F C G]
 	
 	Keď[C] duch objíma [F] človeka,
@@ -2031,7 +2246,7 @@
 	Aj[C] les cestu pripraví[F],
 	sklonia hlávky púpa[C]vy,
 	keď už kráčaš [G]okolo.
-	\\
+	\columnbreak
 	R: [C]Ty si oheň čo aj tmu zažne,
 	[F]presvecuješ srdcia vlažné,
 	[C]rozkazuješ kráčať horám,
@@ -2040,7 +2255,7 @@
 	[F]v živej vode obmyl si ma,
 	[C]ak je môj svet príliš malý,
 	[G]unášaj ma ponad skaly.
-	\\
+	\columnbreak
 	[Medzihra (2x): C F C G]
 	
 	[C]Svieť a buď mi svetlom [F]v tmách,
@@ -2051,14 +2266,9 @@
 	čo ochutí túto [G]zem.
 	\\
 	Ref. + medzihra + Ref.
-\end{guitar}
-\end{multicols}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Nádherný svätý}
-\begin{multicols}{2}
-\begin{guitar}
+\begin{song}{Nádherný svätý}{2}
 	[Emi]Stane sa v čo uve[C]ríš
 	si džbán, ktorý nenapl[G]níš,
 	ak sa nezriekneš všetkých [D]práv
@@ -2075,7 +2285,6 @@
 	ľudia čo prídu nech zbada[G]jú, 
 	že tvoje listy spieva[D]jú.
 	\\
-	\begin{minipage}{\textwidth}
 	R.: Boh je [Emi]svätý, je svätý, je svätý,
 	[C]do vlastných rúk ber svoj život nie ty,
 	[G]objíma nás sme zlomené kvety,
@@ -2084,7 +2293,6 @@
 	[C]ak padáš On s láskou šepká ver mi,
 	[G]ja ťa chytím ak sa pustíš seba,
 	[D]naučím ťa jak sa smrti nebáť.
-\end{minipage}
 	\\
 	[Emi]Láska nemyslí na [C]zlé,
 	v čo verí, viem že krásne [G]znie,
@@ -2098,15 +2306,9 @@
 	že tvoje listy spieva[D]jú.
 	
 	R.:
-\end{guitar}
-\end{multicols}
-\end{minipage}
+\end{song}
 
-
-\begin{minipage}{\textwidth}
-\subsection{Sama}
-\begin{multicols}{2}
-\begin{guitar}
+\begin{song}{Sama}{2}
 	[G]Tak málo si rozumieme,
 	[D]vyčítam ti , mne sa stále [Ami]drieme.
 	[G]Meniť chcem vždy veľa vecí,
@@ -2127,14 +2329,14 @@
 	a nosím topánky [D]tesné.
 	\\
 	[G]Prijmi k sebe [D]tú čo v duši ni[Ami]e
-	 je biela ani iná.
+	je biela ani iná.
 	[G]Vráť ju do záhra[D]dy, nech vstane t[Ami]am, 
 	kde sa neusína.
 	[G]Ustúpiť tam, kde je treba.
 	[D]Zastať sa keď zosmiešňujú [Ami]Teba 
 	a nebyť sám.
 	[G]Dobrom premáhať zlo stále, [D]prijať aj
-	 nedo[Ami]konalé,
+	nedo[Ami]konalé,
 	\\
 	Tak prečo cítim sa [G]sama?
 	Bez Teba cítim sa [D]sama.
@@ -2145,15 +2347,10 @@
 	a ja si vždy nový [D]obliekam .
 	Každý deň vravím Ti [Ami]dnes nie
 	a nosím topánky [D]tesné.
-\end{guitar}
-\end{multicols}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Nenahraditeľná}
-\textit{CAPO 5}
-\begin{multicols}{2}
-\begin{guitar}
+\begin{song}{Nenahraditeľná}{2}
+	\textit{CAPO 5}
 	1.[C] Upleť mi z kvetov korunu snov,
 	[G] objím ma, nech viem, že som ti tou
 	[F] hodnou toho,
@@ -2199,14 +2396,9 @@
 	Uprostred [D] predstáv a snov,
 	dávaj len [A] vedieť, že som, 
 	[Hmi]nenahraditeľná[G].
-\end{guitar}
-\end{multicols}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Svätojánske mušky}
-\begin{multicols}{2}
-\begin{guitar}
+\begin{song}{Svätojánske mušky}{2}
 	Keby si usmial [C] sa a potom [G] plakal ,
 	budem ti [F] radosťou a silou[C] draka,
 	čo nehu [F] neničí, len na ňu [G] čaká.
@@ -2242,85 +2434,68 @@
 	Všetkým, čím [F]vieme byť, posypme [G]lúku.
 	\\
 	Ref.1 + Ref.2
-\end{guitar}
-\end{multicols}
-\end{minipage}
+\end{song}
+	
+\begin{song}{Pod imelom}{2}
+Intro: 4x Emi C G D
 
-\begin{minipage}{\textwidth}
-\subsection{Pod imelom}
-\begin{multicols*}{2}
-\begin{guitar}
-	Intro: 4x Emi C G D
-	
-	Možno keby som bola viac ti[Emi]cho,
-	počula [C]by som v tom hluku [G]prepychov
-	 aj tvoje p[D]riania,
-	už vi[Emi]em, že klamu zdania[C],
-	 slo[G]va ozaj rania ci[D]ty, 
-	kto[Emi] sa ranil, si [C]ty. [G D]
-	\\
-	Možn[Emi]o by nám vydržal vzťah d[C]lhšie,
-	ke[G]by som dovolila, ab[D]y si mi ušiel,
-	tak b[Emi]y si zostal[C],
-	st[G]ojím na druhej strane mo[D]sta 
-	 a ča[Emi]kám. [C D]
-	\\
-	Možno by d[C]uša prenikala moje te[G]lo,
-	možno by s[D]rdce láskou zahore[Emi]lo,
-	keby[C] sme si pod imel[G]om ,
-	ke[D]by sme sa pod ime[Emi]lom,
-	cí[C]tili nájde[Emi]ní,
-	[D] ešte jednu kocku cukru da[Emi]jte mi[C],
-	nech mi je s[G]ladšie aj tu n[D]a zemi,
-	ponorím z[Emi]mysly svoje do peny
-	[C]a na[G] podstavec dreve[D]ný,
-	si ťa po[Emi]ložím[C],
-	st[G]rážim ťa ako chlapca z [D]dreva,
-	no t[Emi]y si neožil[C],
-	no t[G]y si neožil [D].
-	\\
-	R.: Možno by d[C]uša prenikala moje te[G]lo,
-	možno by s[D]rdce láskou zahore[Emi]lo,
-	keby[C] sme si pod imel[G]om ,
-	ke[D]by sme sa pod ime[Emi]lom.
-	\\
-	Možno keby usuším tie kvety
-	a nahrám piesne na kazety
-	a na platne,
-	tak možno vydržíš mi dlhšie,
-	ale vydržalo dlhšie všetko ostatné ?
-	
-	R.
-	
-	Možno keby na chodníku nechám
-	kocky cukru, nájdem cestu späť,
-	ako si dymí strecha z nášho domu,
-	tento dym mi navždy bude v hlave tkvieť.
-\end{guitar}
-\end{multicols*}
-\end{minipage}
+[D]Možno keby som bola viac [Emi]ticho,
+počula [C]by som,v tom hluku [G]prepychov
+aj tvoje priania[D], už viem, že [Emi]klamu zdania [C],
+[G]slova ozaj rania ci[D]ty, a kto sa [Emi]zranil, si [C]ty. [G D]
 
-\begin{minipage}{\textwidth}
-\subsection{Cirkus}
-\begin{multicols}{2}
-\begin{guitar}
+\\
+[Emi]Možno by nám vydržal vzťah d[C]lhšie,
+keby som [G]dovolila, aby si mi [D]ušiel,
+tak by si z[Emi]ostal [C].
+St[G]ojím na druhej strane mo[D]sta [Emi]a čakám. [C D]
+
+\\
+R:Možno by d[C]uša prenikala moje te[G]lo,
+možno by s[D]rdce láskou zahore[Emi]lo,
+[C]keby sme si pod imelom[G],
+[D]keby sme sa pod imelom[Emi].
+\\
+[C]cítili nájde[D]ní, 
+ešte jednu kocku cukru da[Emi]jte mi [C],
+\columnbreak
+nech mi je s[G]ladšie aj tu n[D]a zemi,
+ponorím z[Emi]mysly svoje do peny [C],
+[G]a na podstavec dreve[D]ný, si ťa po[Emi]ložím [C],
+st[G]rážim ťa ako chlapca z [D]dreva,
+no ty si [Emi]neožil [C], no ty si [D]neožil.
+\\
+Možno keby usuším tie kvety
+a nahrám piesne na kazety
+a na platne,
+tak možno vydržíš mi dlhšie,
+ale vydržalo dlhšie všetko ostatné ?
+\\
+Možno keby na chodníku nechám
+kocky cukru, nájdem cestu späť,
+ako si dymí strecha z nášho domu,
+tento dym mi navždy bude v hlave tkvieť.
+\end{song}
+
+\begin{song}{Cirkus}{2}
 	\textit{CAPO 2}
 	[D F# Hmi G]
 	
 	Tatatáratarara, tatatáratarara
 	\\
-	Odsúdená duša volá do davu
-	na ľudí, čo jej nasadili zlatý veniec na hlavu.
-	Skúša zmeniť ešte tresty dané za skutky boľavé.
-	Sudca zvolal: "Nech sa stane!"
-	V tejto krutej oslave.
+	[D]Odsúdená [G]duša volá do [E]davu
+	[G]na ľudí, čo jej nasadili [Hmi]zlatý veniec [G]na hlavu.
+	Skúša z[D]meniť [G]ešte tresty [Hmi]dané,
+	za skutky [G]boľavé.
+	[D]Sudca zvolal: [G]Nech sa stane!
+	[H]V tejto [G]krutej oslave.
 	\\
-	Cirkusanti ovešali šibenicu mašľami,
-	aby duša nespoznala verdikt,
-	čo je do jej srdca vpísaný.
+	[D]Cirkusanti [G]ovešali šibenicu [Hmi]mašľami[G],
+	[D]aby duša nespoznala [G]verdikt,
+	čo je do jej srdca [Hmi]vpísaný[G].
 	Toho, čo ju zradil katom,
 	cez život ju zdobil zlatom.
-	Zvolila si zomrieť za to a teraz je spútaná.
+	[Hmi]Zvolila si zomrieť za to [G]a teraz je spútaná.
 	\\
 	Tatatáratarara, tatatáratarara
 	Tatatáratarara
@@ -2357,16 +2532,10 @@
 	\\
 	Tatatáratarara, tatatáratarara
 	Tatatáratarara
-\end{guitar}
-\end{multicols}
-\end{minipage}
+\end{song}
 
-
-\begin{minipage}{\textwidth}
-\subsection{Dobrý deň, to som ja}
-\textit{CAPO 1}
-\begin{multicols}{2}
-\begin{guitar}
+\begin{song}{Dobrý deň, to som ja}{2}
+	\textit{CAPO 1}
 	[Ami]Chce sa mi plakať a smiať,
 	[Dmi]ešte chcem pred vami stáť,
 	[E]s pravdou von budem vám hrať,
@@ -2389,7 +2558,8 @@
 	na ohľady nehľadieť,
 	už viem že sebou som keď,
 	spokojná bývam tam kde som,
-	 tam kde som spokojná hneď.
+	tam kde som spokojná hneď.
+	\columnbreak
 	
 	R.:
 	Bude mi ľahšie, bude mi ľahšie,
@@ -2415,20 +2585,12 @@
 	ku šťastiu chýba už iba učiť sa povedať nie.
 	\\
 	C, Dmi, E, Ami, E
-\end{guitar}
-\end{multicols}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Kone}
-\textit{CAPO 1}
-\begin{multicols}{2}
-\begin{guitar}
-	
-	Ami G F
-	
-	Áa áa áa áa a
-	
+\begin{song}{Kone}{2}
+	\textit{CAPO 1}
+	Ami G F	
+	Áa áa áa áa a	
 	\\
 	[Ami] Niektorí majú v sebe líšky [G] ,
 	v [F] pretvárke žijú a hľadia z vý [C] šky,
@@ -2438,8 +2600,7 @@
 	[G] človek blíži viac jak zviera,
 	[F] ktoré povahu nepredstiera [G] .
 	\\
-	R.
-	Aj kone [C] cválajú v [G] nás,
+	R.:Aj kone [C] cválajú v [G] nás,
 	oheň [Ami] vnášajú, kde je [F] mráz,
 	[C] cválajú [G] tam, nad ve [Ami] cou,
 	k hodi [F] nám, začí [Ami] nam.
@@ -2454,32 +2615,18 @@
 	[G] v zrkadle sa už pýtam: „Kto si ?"
 	[F] Toľko je zvierat, ktoré nosí [G] m.
 	\\
-	R.
-	Aj kone [C] cválajú v [G] nás,
-	oheň [Ami] vnášajú, kde je [F] mráz,
-	[C] cválajú [G] tam, nad ve [Ami] cou,
-	k hodi [F] nám, k hodi [C] nám. 
-	\\
-	G Ami F C G Ami F
+	R. + G Ami F C G Ami F
 	\\
 	[Ami] Ľudia sa často hrnú do ja [F] my,
 	[Ami] najviac sa chvália nevyrovna [F] ní,
 	[Ami] ľudia sa často hrnú do slá [F] vy,
 	[Ami] ktorá má základ v pierkach púpa [F] vy. [G]
 	\\
-	Aj kone [C] cválajú v [G] nás,
-	oheň [Ami] vnášajú, kde je [F] mráz,
-	[C] cválajú [G] tam, nad ve [Ami] cou
-	k hodi [F] nám, začí [Ami] nam.
-\end{guitar}
-\end{multicols}
-\end{minipage}
+	R.
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Buď mi doktorom}
-\textit{CAPO 2}
-\begin{multicols*}{2}
-\begin{guitar}
+\begin{song}{Buď mi doktorom}{2}
+	\textit{CAPO 2}
 	2x D G D
 	
 	1.
@@ -2496,8 +2643,7 @@
 	vylieč z oba[A]vy, kaž[G]dý pohľad nezdra[D]vý,
 	lieč mi dušu [A]lieč, až potom ju pustím [D]preč.
 	\\
-	R.
-	Ako [G] čistá voda, čerst[G]vý [A]chlieb,
+	R.Ako [G] čistá voda, čerst[G]vý [A]chlieb,
 	[G]vzorný tlak a správny [A]tep,
 	buď mi [D]hneď.
 	[G]Na čerstvý vzduch vezmi [A]ma,
@@ -2510,22 +2656,17 @@
 	v každom trápe[A]ní, 
 	poč[G]kaj na mňa môj že[D]ních,
 	to čo lieči [A]svet, je [G]každého srdca [D]stret.
- 	\\
+	\\
 	R: 2x
- 	\\
+	\\
 	4.
 	Odovzdám sa ti, ku [G]tebe sa obrá[D]tim,
 	keď prší z oblakov, [G]lieč ma prosím hocja[D]ko,
 	keď prší z očí [A]mi aj  [G]zo šatami mokrý[D]mi,
 	lieč mi dušu [A]lieč, až potom ju pustím [D]preč.
-\end{guitar}
-\end{multicols*}
-\end{minipage}
+\end{song}
 
-\begin{minipage}{\textwidth}
-\subsection{Smej sa}
-\begin{multicols}{2}
-\begin{guitar}
+\begin{song}{Smej sa}{2}
 	2x A D A E
 	
 	[A]Na stoličku oproti mne [D]sadlo si moje ja
@@ -2577,17 +2718,49 @@
 	[D]postupne, po troške
 	[A]A smútok, ak aj príde, 
 	[E]utopím v čaji, v termos[D]ke.
-\end{guitar}
-\end{multicols}
-\end{minipage}
+\end{song}
+
+\begin{song}{Len ma ľúb}{2}
+	[G]Srdce mi volá po [D]láske a neviem, čo [Emi]s tým.
+	[G]Nasýtiš, uzdravíš, [D]obímeš, jedine [Emi]ty.
+	[G]Jeseň, zima, [D]jar aj leto [Emi]si.
+	[G]Húpať sa húpať na [D]hojdačke, čo zave[Emi]síš.
+	\\
+	Len ma [G] ľúúú[D]ub, len ma [G] ľúb [D].
+	[Emi]Mojim pevným [D] štítom [G]buď [D].
+	Len ma [G] ľúúú[D]ub, len ma [G] ľúb [D].
+	[Emi]V tebe túžim [D]spoči[G]núť [D Emi G D Emi].
+	\\
+	[G]Srdce mi volá po [D]chvíľach, čo neruší [Emi]nič.
+	[G]Jak skala nezlomná, 
+	[D]pred mojim strachom sa [Emi]vztýč.
+	[G]Nedaj si ma, [D]ja ťa nedám [Emi]si.
+	[G]Húpať sa húpať na [D]hojdačke, čo zave[Emi]síš.
+	\columnbreak
+	Len ma [G] ľúúú[D]ub, len ma [G] ľúb [D].
+	[Emi]Mojim pevným [D] štítom [G]buď [D].
+	Len ma [G] ľúúú[D]ub, len ma [G] ľúb [D].
+	[Emi]V tebe tú[D]užim \dots
+	\\
+	Len ma [A] ľúúú[E]ub, len ma [A] ľúb [E].
+	[F#mi]Mojim pevným [E] štítom [A]buď [E].
+	Len ma [A] ľúúú[E]ub, len ma [A] ľúb [E].
+	[F#mi]V tebe túžim \dots [E]spoči[A]núť.
+	\\
+	\textit{E F\#mi A E F\#mi}
+	\\
+	[A]Srdce mi volá po [E]láske a už viem, čo [F#mi]s tým.
+	[A]Nasýtiš, uzdravíš, [E]obímeš, jedine [F#mi]ty.
+\end{song}
 
 %%%%%%%%%%%%%% KOLEDY
+\newpage
 
-\begin{minipage}{\textwidth}
+\guitarOn
+
 \section{Koledy}
 \subsection{Madona s dieťaťom}
 \begin{multicols}{2}
-\begin{guitar}
 	[Dmi]Po krásnej tvári [C]blúdi sen
 	Keď [B]k lícam túli si [A]dieťa
 	To [Dmi]býva vzácna [C]chvíľa žien
@@ -2607,14 +2780,10 @@
 	A [B]krásne piesne jej [A]hrá noc
 	Tak [Dmi]skús tiež nájsť [C]Máriu
 	A [B]nájdeš [A]kľúče od [Dmi]Vianoc
-\end{guitar}
 \end{multicols}
-\end{minipage}
 
-\begin{minipage}{\textwidth}
 \subsection{Tichá noc}
 \begin{multicols}{2}
-\begin{guitar}
 	[A]Tichá noc, svätá noc!
 	[E]Všetko spí, [A]všetko sní,
 	[D]sám len svätý bdie [A]dôverný pár,
@@ -2636,13 +2805,9 @@
 	[E]v tvojom zrodení,[A]Boh[F#]Syn,
 	[A]Ježiško,[E7]Láska, Boh [A]Syn!
 	
-\end{guitar}
 \end{multicols}
-\end{minipage}
 
-\begin{minipage}{\textwidth}
 \subsection{Aký je to svit}
-\begin{guitar}
 	[F]Aký je to svit, čože to má byť v Be[C]tle[F]me?
 	/: Hore sa majme, [C]hneď povstávajme [F]zo [C]ze[F]me! :/
 	\\
@@ -2657,13 +2822,9 @@
 	\\
 	To sa ten istý z Panenky čistý narodil
 	/: Boží Syn tu dnes, ako to z nebies hlas tvrdil. :/
-\end{guitar}
-\end{minipage}
 
-\begin{minipage}{\textwidth}
 \subsection{Vstávajte pastieri}
 \begin{multicols}{2}
-\begin{guitar}
 	[D]Vstávajte pastieri, [E]berte sa [A]hor
 	[D]Aká to novina, [G]dajte po[D]zor
 	[D]Aké [A]to [D]zázra[A]ky [D]javia [A]sa [D]na ne[A]bi.
@@ -2685,14 +2846,10 @@
 	[F]V chudobných [Dmi]plienočkách [B]pol[C]ože[F]ný
 	Leží náš Spasiteľ narodený
 	V chudobných plienočkách položený
-\end{guitar}
 \end{multicols}
-\end{minipage}
 
-\begin{minipage}{\textwidth}
 \subsection{Povedzte nám pastuškovia}
 \begin{multicols}{2}
-\begin{guitar}
 	[C]Povedzte nám pastuškovia, č[Dmi]o ste [G]vide[C]li,
 	keď ste sa tak o polnoci [Dmi]všetci [G]rozbeh[C]li.
 	/:[F]Vi[G]deli [C]dieťatko, [Dmi]krás[G]ne pa[C]choliatko,
@@ -2713,14 +2870,10 @@
 	že sa Kristus narodil.
 	/:V chudobnej maštali, tam mu aj postlali,
 	tam je jeho hospoda.:/
-\end{guitar}
 \end{multicols}
-\end{minipage}
 
-\begin{minipage}{\textwidth}
 \subsection{Vianočná hviezda (The First Noël)}
 \begin{multicols}{2}
-\begin{guitar}
 	Malá [C]hviezda belasá
 	Pozri [Ami]schádza až [Emi]k nám
 	Tíško [F]dopadá [C]z výšky na [F]obločný [C]rám
@@ -2740,29 +2893,26 @@
 	Svieti tým čo hľadajú
 	do tých [Ami]prastarých č[Emi]ias
 	V ktorých [F]Ježiška s [C]Máriou [F]možete [C]nájsť
-\end{guitar}
 \end{multicols}
-\end{minipage}
 
-\begin{minipage}{\textwidth}
 \subsection{Svet lásku má}
 \begin{multicols}{2}
-\begin{guitar}
-	[C]Koľko [C7]býva [F]dní,
-	[B]zlých a [Gmi]zálud[C]ných,
-	[C7]keď náhle [F]stíchne [Dmi]vták,
-	[B]seba strácaš v zrkad[Gmi]lách.
-	Pre tie chvíle Pán
-	dieťa dáva nám.
-	V očiach má nádej hviezd,
-	po cestách nás prišlo viesť.
+	[C]Koľko býva [F]dní,
+	[B]zlých a zálud[C]ných,
+	keď náhle [Dmi]stíchne vták,
+	[B]seba strácaš v zrkad[Gmi]lách[C].
 	\\
-	[C7]Svet lásku [B]má.
-	[C7]Anjel píše [Dmi]krídlom [C]zopár [B]viet,
+	[C]Pre tie chvíle [F]Pán
+	[B]dieťa dáva [C]nám.
+	V očiach má [Dmi]nádej hviezd,
+	[B]po cestách nás prišlo [Gmi]viesť[C].
+	\\
+	R:Svet lásku [B]má.
+	[C]Anjel píše [Dmi]krídlom [Dmi/C]zopár [B]viet,
 	tie [Gmi]dávne piesne necháš [C]znieť.
-	Svet lásku [Dmi]má.
-	[C]Svet lásku [B]má.
-	[C7]Pozri nosí [Dmi]krásnu [C]detskú [G]tvár.
+	Svet lásku [Dmi]má[C].
+	Svet lásku [B]má.
+	[C]Pozri nosí [Dmi]krásnu [Dmi/C]detskú [G]tvár.
 	A [B]dní čo máme je len [C]pár.
 	Svet lásku [F]má.
 	\columnbreak
@@ -2772,26 +2922,105 @@
 	někdo věčný na nás dých.
 	\\
 	Opět máš chuť žít (Opäť máš chuť žiť)
-	vždyť je štít (veď je láska štít)
+	vždyť je láska štít (veď je láska štít)
 	Radostné trápení,
 	uvěřte dávným znamením (Oh, znamením)
 	\\
-	Svět lásku má.
-	Ač má jenom sílu motýlí,
-	kdo věří v ní, se nemýlí.
-	Svět lásku má.
-	Svět lásku má.
-	Víš, není už jen v dávných pohádkách,
-	a z výše zlétla na tvuj práh.
-	Svět lásku má.
-\end{guitar}
+	Svět lásku [B]má.
+	[C]Ač má jenom [Dmi]sílu motý[B]lí,
+	kdo [Gmi]věří v ní, se nemý[C]lí.
+	Svět lásku [Dmi]má.
+	[C]Svět lásku [B]má.
+	[C]Víš, není už [Dmi]jen v dávných pohád[G]kách,
+	a z [B]výše zlétla na tvuj [C]práh.
+	Svět lásku [F]má.
 \end{multicols}
-\end{minipage}
 
-\begin{minipage}{\textwidth}
+\subsection{Byla cesta, byla ušlapaná}
+\begin{multicols}{2}
+	[F]Byla cesta, [Bmi]byla ušla[F]paná
+	[F]Byla cesta, [Bmi]byla ušla[F]paná
+	/:[F]Kdo ju šla[Bmi]pal, [F]kdo ju šla[Bmi]pal
+	Matka Krista [F]Pána:/
+	\\
+	Potkala ju tam svatá Alžběta
+	Potkala ju tam svatá Alžběta
+	Kam ty kráčíš, kam ty kráčíš
+	Sestřičko má milá
+	Poslouchat mše, poslouchat mše
+	Svatého Nešvoja
+	\columnbreak
+	Nechoď sestro, nechoď do kostela
+	Nechoď sestro, nechoď do kostela
+	/:Povídajú, povídajú, že porodíš syna:/
+\end{multicols}
+
+\subsection{Vianočný hymnus}
+\begin{multicols}{2}
+	[E]Tak to je čas [A]Vianoc
+	Ten čas spomie[Hmi]nok
+	Sme zasa [E]starší zas o jeden [A]rok
+	Tak to je čas [D]Vianoc
+	Zas prišiel [Emi]k nám
+	Dúfam, že [A]máš sa
+	A nie si [D]sám.
+	\\
+	R: Veselé [G]sviatky a nový [A]rok
+	A úsmev [Emi]v očiach
+	[G]A ľahký [D]krok.
+	\columnbreak
+	Tak to je svet Vianoc
+	Pre všetkých nás
+	Tak chvíľu skúsme
+	Spomaliť čas
+	Veselé sviatky
+	Osamelým
+	Smútok sa stratí
+	Tak ako dym.
+	\\
+	R:Tak veselé sviatky a nový rok
+	A úsmev v očiach
+	A ľahký krok [E].
+	\\
+	[A]Krásne sviatky, 
+	[Hmi]krásne sviatky
+	[E]Krásne sviatky [A].
+\end{multicols}
+
+\subsection{Daj Boh šťastia tejto zemi}
+\begin{multicols}{2}
+	[E]Daj Boh šťastia tejto [A]zemi
+	[E]Všetkým [H] ľuďom [E]v nej
+	[E]Nech ju slnko [A]jasne [Ami]svieti
+	[E]Každý [H]Boží [A]deň[Ami].
+	[E]Nech ich [H]sused [A]v láske [Ami]má
+	[E]Nech im [H]priazeň, [A]pokoj [Ami]dá
+	\\
+	[E]Daj Boh šťastia tejto [A]zemi
+	[E]Všetkým [H] ľuďom [E]v nej
+	[E]Nech ich [H]sused [A]v láske [Ami]má
+	[E]Nech im [H]priazeň, [A]pokoj [Ami]dá
+	[E]Daj Boh šťastia tejto [A]zemi
+	[E]Všetkým [H] ľuďom [E]v nej
+	\columnbreak
+	Daj Boh šťastia celej Zemi
+	Všetkým národom
+	Nech ju svetlo, hviezdy, lásky
+	Ožiaruje dom
+	Hladným chleba dobrého
+	Chorým zdravia pevného
+	\\
+	Daj Boh šťastia celej Zemi
+	Všetkým národom
+	Dopraj Bože svojmu dielu večné trvanie
+	Nech sa samo nezahubí, všetci prosíme
+	Rybám čistej vody daj
+	Vtáctvo a zver zachovaj
+	Dopraj Bože svojmu dielu večné trvanie
+\end{multicols}
+
 \subsection{Búvaj dieťa krásne}
 \begin{multicols}{2}
-\begin{guitar}
 	[C]Búvaj, dieťa, [dmi]krás[G]ne, [C]uložené [dmi]v ja[G]sle.
 	[C]Búvaj, [G]búvaj, [F]pach[G]oľa, [C]milos[G]tivé [F]Jez[G]uľa,
 	[C]budeme Ťa [F]kolí[G]sať,[C]abys [dmi]mohol [G]do[G7]bre [C]spať.
@@ -2809,17 +3038,90 @@
 	Aj vy malé fialky, zaváňajte do ďialky,
 	zavejte mu vône, Pánovi na tróne,
 	ticho, sladúčko, ticho, sladúčko.
-\end{guitar}
 \end{multicols}
-\end{minipage}
+
+\subsection{Do hory, do lesa, valasi}
+\begin{multicols}{2}
+	[C]Do hory, [G7]do lesa, [C]va[F]la[C]si,
+	či horí v [G7]tom našom [C]sa[G7]l[C]aši,
+	radosť veľká sa zjavu[G]je
+	[C]a tento svet potešu[G]je.
+	[C]Kráčajte, [G7]bratkovia [C]k ja[F]slič[C]kám,
+	aby ste [G7]zjavili [C]vše[G7]tko [C]nám.
+	\\
+	Počkajte nás, milí bratkovia,
+	nebeskí lietajú duchovia.
+	Sláva Bohu! Prespevujú,
+	pokoj ľuďom ohlasujú,
+	vtáčkovia prekrásne spievajú
+	a do Betlehema volajú.
+	\columnbreak
+	Zrodila Panenka Dieťa nám,
+	v jasličkách vložené leží tam.
+	Mesiáša čakaného,
+	Boha na svet vteleného,
+	poďme a vítajme vznešené
+	Dieťatko, ležiace na sene.
+	\\
+	Ó, Boží Synáčku z výsosti,
+	dajže nám zo svojej milosti,
+	by sme ťa večne chválili,
+	meno Božie velebili.
+	Žehnaj nás, drahý náš Spasiteľ,
+	žiadaný náš ty Emanuel.
+\end{multicols}
+
+\subsection{Dobrý pastier sa narodil}
+\begin{multicols}{2}
+	[C]Dobrý pastier [Dmi]sa na[G]rodil, 
+	[C]by ovečky [Dmi]vyslo[G]bodil,
+	[C]pri be[F]tléms[C]kom [F]sal[C]aši, 
+	/:[Dmi]radujme sa, [C]veseľme sa, [G]vala[C]si.:/
+	\\
+	Radujte sa a plesajte, 
+	láskou k Bohu plápolajte,
+	že nám Boh dal takého, 
+	/:žiadaného nám pastiera dobrého.:/
+	\columnbreak
+	Ak sa jedna ovca stratí, 
+	On sa hľadať ju navráti.
+	Nebojí sa zanechať 
+	/:pre tú jednu deväťdesiat aj deväť.:/
+	\\
+	Ó, Dieťatko utešené, 
+	z čistej Panny narodené,
+	daj nám svojej milosti, 
+	/:nech sa s tebou uvidíme v radosti.:/
+\end{multicols}
+
+\subsection{Narodil sa Kristus Pán}
+\begin{multicols}{2}
+	[C]Narodil sa Kristus Pán, [D7]veseľme [G]sa!
+	[C]Z ruže [G7]kvietok [C]skvitol [G7]nám, [C]raduj[G7]me [C]sa!
+	\\
+	R: /: [C]Z života čis[G]té[C]ho, 
+	z rodu kráľov[G]ské[C]ho,
+	[C]Kris[F]tus [C]Pán [Dmi]naro[G]dil [C]sa. :/
+	\\
+	Prorokmi nám hlásaný, veseľme sa!
+	Na svet nám je poslaný, radujme sa!
+	\columnbreak
+	Človek je učinený, veseľme sa!
+	By bol večne spasený, radujme sa!
+	\\
+	Božia milosť nebeská, buď vždy s nami!
+	Daj nech závisť diabolská nás nemámi!
+	\\
+	R: /: Otče, pre milého, 
+	Syna nám daného, 
+	ó, zmiluj sa nad nami! :/
+\end{multicols}
 
 %%%%%%%%%%%%%% KAREL KRYL
 \section{Karel Kryl}
 
-\begin{minipage}{\textwidth}
 \subsection{Anděl}
 \begin{multicols}{2}
-\begin{guitar}
 	C, C, C, G7
 	
 	[C]Z rozmláce[Ami]nýho kostela,
@@ -2865,14 +3167,10 @@
 	\\
 	Ref. 
 	C, F, C, Ami, F, G, C
-\end{guitar}
 \end{multicols}
-\end{minipage}
 
-\begin{minipage}{\textwidth}
 \subsection{Morituri te salutant}
 \begin{multicols}{2}
-\begin{guitar}
 	1.
 	Cesta je [Ami]prach a [G] šterk a [Dmi]udusaná [Ami]hlína 
 	[C]a šedé [F] šmrouhy [G]kreslí do vla[C]sů
@@ -2903,14 +3201,10 @@
 	[C]mosazná [F]včelka [G]od vlkodla[C]ka	
 	/:Rezavý [Dmi]kvér, můj [G]prach a [C]sto let stará špí[Emi]na	
 	[Ami]a děsně [G]velká [Emi]bíla obla[Ami]ka.:/
-\end{guitar}
 \end{multicols}
-\end{minipage}
 
-\begin{minipage}{\textwidth}
 \subsection{Od Čadce k Dunaju}
 \begin{multicols}{2}
-\begin{guitar}
 	[Ami]Od Čadce k D[Dmi]unaju p[Ami]očuť čudnú [E]nôt[Ami]u,
 	hr[Ami]anicu st[F]avajú z [G]ostnatého d[Dmi]rôtu[Ami E],
 	/: k[Ami]amarát-s[F]eparát, n[G]ová para[C]lýz[E]a
@@ -2920,14 +3214,10 @@
 	[Ami]vízum mi [F]nedali, [G]vraj sa zao[Dmi]bídem[Ami E],
 	/:č[Ami]akal som [F]deväť dní, [G]viacej nechcem [C]sľú[E]biť,
 	[Ami]stretnem ťa [Dmi]vo Viedni, [Ami]tam sa smieme [E] ľú[Ami]biť! :/
-\end{guitar}
 \end{multicols}
-\end{minipage}
 
-\begin{minipage}{\textwidth}
 \subsection{Pieta}
 \begin{multicols}{2}
-\begin{guitar}
 	[Emi  Edim  Emi  H7]
 	
 	[Emi]V rohu [Edim]náměstí, [Emi]kousek [D7]od nádraží,
@@ -2976,14 +3266,10 @@
 	čí[Emi]st se však [D7]neučila, [Emi]tak nápis [D7]pohladila,
 	[Emi]písmena [D7]rozmazala, [Emi]zbytek [D7]umyl [Emi]déšť,
 	zbytek umyl déšť, zbytek umyl déšť.
-\end{guitar}
 \end{multicols}
-\end{minipage}
 
-\begin{minipage}{\textwidth}
 \subsection{Salome}
 \begin{multicols}{2}
-\begin{guitar}
 	[Ami]Něžná i proradná, [C]krutá i bezradná
 	[G]Plamen i červánek, ďábel i beránek
 	[E]Cukr i sůl
@@ -3018,14 +3304,10 @@
 	[C]Salome, v koutku jsi usedla
 	[G]Víčka máš šedivá, nikdo se nedívá
 	S[E]alome, pláčeš? La la la
-\end{guitar}
 \end{multicols}
-\end{minipage}
 
-\begin{minipage}{\textwidth}
 \subsection{Karavana mraků}
 \begin{multicols}{2}
-\begin{guitar}
 	[C]Slunce je zlatou skobou [Ami]na vobloze přibitý,
 	[F]pod sluncem [G]sedlo kože [C]ný[G7],
 	[C]pod sedlem kůň, 
@@ -3064,14 +3346,10 @@
 	kde tichej [F]dům a [G]pušky reza [Ami]ví,
 	/: orat a [Dmi]sít od [G7]rána [Ami]do soumra [Dmi]ku
 	a nechat [Ami]zapomenout [E]srdce bola [Ami]vý. :	
-\end{guitar}
 \end{multicols}
-\end{minipage}
 
-\begin{minipage}{\textwidth}
 \subsection{Hle, jak se perou}
 \begin{multicols}{2}
-\begin{guitar}
 	[Emi, D, Emi, H7, Emi]
 	
 	Tak [Emi]hle, jak se [D]perou, jen [Emi]pohleďte [D]na ně,
@@ -3097,14 +3375,10 @@
 	vždyť při této hraně jde o krk i tobě!
 	
 	2x Ref.	
-\end{guitar}
 \end{multicols}
-\end{minipage}
 
-\begin{minipage}{\textwidth}
 \subsection{Důchodce}
 \begin{multicols}{2}
-\begin{guitar}
 	K[Ami]alhoty r[C]oztřepené n[Ami]a vnitřní str[C]aně,
 	[Ami]zápěstí r[C]oztřesené [Ami]a seschlé dl[C]aně,
 	kterými žm[E7]oulá kůrku chl[Ami]eba,
@@ -3130,14 +3404,10 @@
 	když vidím t[F]yhle l[G]idský vr[Ami]aky, 
 	třesu se str[G]achem př[Ami]ed přízraky,
 	že jednou z[F]e mne bude t[E]aky [Ami]důchodce ...
-\end{guitar}
 \end{multicols}
-\end{minipage}
 
-\begin{minipage}{\textwidth}
 \subsection{Veličenstvo kat}
 \begin{multicols}{2}
-\begin{guitar}
 	V [Emi]ponurém osvětlení [D]gotického [Emi]sálu
 	[G]kupčíci vyděšení [Ami]hledí do mi[H]sálů
 	[Emi]a houfec [C]mordýřů si žádá[D] požehnání[G D],
@@ -3180,14 +3450,10 @@
 	syn otce nenáviděl, bratr bratru škodil,
 	jen motýl smrtihlav se nad tou zemí vznáší,
 	/: kde v kruhu tupých hlav dlí Veličenstvo Kat. :/
-\end{guitar}
 \end{multicols}
-\end{minipage}
 
-\begin{minipage}{\textwidth}
 \subsection{Bratříčku zavírej vrátka}
 \begin{multicols}{2}
-\begin{guitar}
 	[Ami]Bratříčku nevzlykej to nejsou[C] bubáci,
 	[G]vždyť už jsi velikej to jsou jen [E7] vojáci.
 	[C]Přijeli v hranatých železných maringotkác[E7]h.
@@ -3213,17 +3479,13 @@
 	beránka vlku se zachtělo, 
 	b[F]ratříčku [Ami]zaví[F]rej vrátka[Ami]!
 	Z[F]avíre[Ami]j vrát[F]ka[Ami]!
-\end{guitar}
 \end{multicols}
-\end{minipage}
 
 %%%%%%%%%%%%%% JIRI SCHELINGER
 \section{Jiří Schelinger}
 
-\begin{minipage}{\textwidth}
 \subsection{Holubí dum}
 \begin{multicols}{2}
-\begin{guitar}
 	[Emi]Zpí[D]vám [C]ptákům a [H]zvlášť holu[Emi]bům
 	[Emi]stá[D]val v ú[C]dolí [H]mém starý [Emi]dům
 	[G]ptá[D]ků [G]houf zalé[D]tal ke kro[G]vům
@@ -3251,10 +3513,10 @@
 	[Emi]ne[D]spa[C]tříš strace[H]né údo[Emi]lí
 	\\
 	Ref.
-\end{guitar}
 \end{multicols}
-\end{minipage}
 
-
-\end{Large}
+%\end{center}
+%\end{guitar}
+\guitarOff
+%\end{Large}
 \end{document}
